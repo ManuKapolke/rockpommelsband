@@ -1,0 +1,26 @@
+.root {
+  grid-area: footer;
+  padding: 32px 16px 64px;
+  margin-block-start: 32px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--font-color-emphasized);
+  background-color: var(--footer-color-bg);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-block-end: 1em;
+
+  a {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--font-color-main);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

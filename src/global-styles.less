@@ -1,0 +1,124 @@
+@import "./fonts.less";
+
+/* Custom global styles */
+:root {
+    --page-top-padding: 120px;
+    --page-side-padding: max(12vw, calc(.5*(100vw - 1920px)));
+}
+
+html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+
+    --rpb-color-a: #f00;
+    --rpb-color-b: #b21e57;
+    --rpb-color-c: #5947b7;
+
+    --font-color-main: hsl(230deg 90% 95%);
+    // --font-color-hover: hsla(292, 100%, 70%, 0.667);
+    --font-color-hover: var(--rpb-color-a);
+    --font-color-emphasized: hsl(230deg 75% 88%);
+    // --font-color-textlink: hsl(230, 40%, 40%);
+    --font-color-textlink: var(--rpb-color-c);
+    // --font-color-headline: hsl(312, 45%, 47%);
+    --font-color-headline: var(--rpb-color-b);
+    --header-color-bg: none;
+    --footer-color-bg: hsl(240deg 40% 5% / 50%);
+    --shadow-color: 250deg 35% 11%;
+
+    /* prettier-ignore */
+    --shadow-elevation-low:
+        0px 0.6px 0.6px hsl(var(--shadow-color) / 0.26),
+        0px 0.8px 0.8px -1.6px hsl(var(--shadow-color) / 0.22),
+        0px 1.8px 1.8px -3.2px hsl(var(--shadow-color) / 0.19);
+    /* prettier-ignore */
+    --shadow-elevation-medium:
+        0px 0.3px 0.6px hsl(var(--shadow-color) / 0.2),
+        0px 0.7px 1.4px -1.1px hsl(var(--shadow-color) / 0.19),
+        0px 1.5px 3.7px -2.1px hsl(var(--shadow-color) / 0.18),
+        0.1px 4px 9.2px -3.2px hsl(var(--shadow-color) / 0.17),
+        0.2px 6px 15px -2.3px hsl(var(--shadow-color) / 0.16);
+    /* prettier-ignore */
+    --shadow-elevation-high:
+        0px 0.6px 0.6px hsl(var(--shadow-color) / 0.26),
+        0px 1.8px 1.8px -0.5px hsl(var(--shadow-color) / 0.24),
+        0px 3.2px 3.3px -0.9px hsl(var(--shadow-color) / 0.23),
+        0.1px 5.4px 5.5px -1.4px hsl(var(--shadow-color) / 0.21),
+        0.1px 9.1px 9.3px -1.8px hsl(var(--shadow-color) / 0.2),
+        0.2px 14.7px 15px -2.3px hsl(var(--shadow-color) / 0.19),
+        0.3px 22.8px 23.3px -2.7px hsl(var(--shadow-color) / 0.17),
+        0.4px 34.2px 34.9px -3.2px hsl(var(--shadow-color) / 0.16);
+}
+
+body {
+    background-attachment: fixed;
+    background-image: conic-gradient(from 270deg at 50% -20%,
+            hsl(240deg 40% 5%) 50%,
+            hsl(250deg 40% 20%),
+            hsl(250deg 30% 25%),
+            hsl(250deg 40% 20%),
+            hsl(240deg 40% 5%));
+    // background-image: conic-gradient(from 270deg at 50% -20%,
+    //         hsl(240, 2%, 5%) 50%,
+    //         hsl(250deg 2% 20%),
+    //         hsl(250deg 1% 35%),
+    //         hsl(250deg 2% 20%),
+    //         hsl(240deg 2% 5%));
+
+    color: var(--font-color-main);
+}
+
+h1,
+h2 {
+    font-family: "Rubik Dirt", sans-serif;
+    font-size: 2.25em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--font-color-headline);
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--font-color-headline);
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color-textlink);
+
+    &:hover {
+        color: var(--font-color-hover);
+        text-decoration: none;
+    }
+}
+
+.emphasized {
+    text-transform: uppercase;
+}
+
+.filter {
+    will-change: filter;
+    transition: filter 300ms;
+
+    &:hover {
+        // filter: drop-shadow(0 0 12em hsla(237, 100%, 70%, 0.667));
+        // filter: drop-shadow(0 0 12em hsla(99, 100%, 70%, 0.667));
+        filter: drop-shadow(0 0 12em var(--font-color-hover));
+    }
+}
+
+@keyframes spinning-animation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spinning {
+        animation: spinning-animation infinite 20s linear;
+    }
+}

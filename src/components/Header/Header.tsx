@@ -23,7 +23,7 @@ export const Header = () => {
         <header className={styles.root}>
             <a href="/" className={styles.logo}>
                 {/* <SvgPaperPlane /> */}
-                <img src="src/assets/paperplane.svg" alt="Paper Plane Logo" className='filter' />
+                <img src="src/assets/papierflieger.svg" alt="Paper Plane Logo" className='filter' />
             </a>
             <nav>
                 <ul className={styles.navList}>

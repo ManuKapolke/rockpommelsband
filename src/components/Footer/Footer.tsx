@@ -1,15 +1,16 @@
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.less';
 
 export const Footer = () => {
   return (
     <footer className={styles.root}>
       <div className={styles.links}>
-        <a target="_blank" rel="noopener noreferrer" href="#">
+        <Link to="imprint">
           Impressum
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href="#">
+        </Link>
+        <Link to="privacy">
           Datenschutz
-        </a>
+        </Link>
       </div>
       <p>© 2025 Rockpommel's Band. All rights reserved.</p>
     </footer>

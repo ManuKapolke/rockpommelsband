@@ -4,6 +4,8 @@ import { Layout } from "../../pages/Layout/Layout";
 import { Home } from "../../pages/Home/Home";
 import { About } from "../../pages/About/About";
 import { Contact } from "../../pages/Contact/Contact";
+import { PrivacyERecht } from "../Legal/Privacy";
+import { Imprint } from "../Legal/Imprint";
 
 export const App = () => {
   return (
@@ -18,6 +20,8 @@ export const App = () => {
           <Route path="video" element={<Video />} /> */}
           <Route path="contact" element={<Contact />} />
           {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="imprint" element={<Imprint />} />
+          <Route path="privacy" element={<PrivacyERecht />} />
         </Route>
       </Routes>
     </BrowserRouter>

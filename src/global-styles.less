@@ -10,7 +10,7 @@ html {
     color-scheme: dark;
     scroll-behavior: smooth;
 
-    --rpb-color-a: #f00;
+    --rpb-color-a: #df0d25;
     --rpb-color-b: #b21e57;
     --rpb-color-c: #5947b7;
 
@@ -56,8 +56,10 @@ body {
             hsl(240deg 40% 5%) 50%,
             hsl(250deg 40% 20%),
             hsl(250deg 30% 25%),
+            // hsl(230deg 75% 88%),
             hsl(250deg 40% 20%),
             hsl(240deg 40% 5%));
+
     // background-image: conic-gradient(from 270deg at 50% -20%,
     //         hsl(240, 2%, 5%) 50%,
     //         hsl(250deg 2% 20%),
@@ -71,20 +73,24 @@ body {
 h1,
 h2 {
     font-family: "Rubik Dirt", sans-serif;
-    font-size: 2.25em;
+    // font-size: 2.25em;
     font-weight: 400;
     text-transform: uppercase;
     color: var(--font-color-headline);
 }
 
-h3 {
-    font-size: 1.5em;
+h3,
+h4,
+h5,
+h6 {
+    // font-size: 1.5em;
     color: var(--font-color-headline);
 }
 
 a {
     text-decoration: none;
     color: var(--font-color-textlink);
+    transition: all 200ms;
 
     &:hover {
         color: var(--font-color-hover);
@@ -98,12 +104,22 @@ a {
 
 .filter {
     will-change: filter;
-    transition: filter 300ms;
+    transition: filter 1000ms;
 
     &:hover {
         // filter: drop-shadow(0 0 12em hsla(237, 100%, 70%, 0.667));
         // filter: drop-shadow(0 0 12em hsla(99, 100%, 70%, 0.667));
-        filter: drop-shadow(0 0 12em var(--font-color-hover));
+        filter: drop-shadow(0 0 1em var(--font-color-emphasized));
+    }
+}
+
+@keyframes typing-reveal {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
     }
 }
 

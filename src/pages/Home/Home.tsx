@@ -7,32 +7,32 @@ export const Home = () => {
     return (
         <div className={styles.contentWrapper}>
             {/* <div className={styles.rpbWriting}>
-                <img src="src/assets/rockpommelsband.svg" alt="Rockpommel's Band Writing" />
+                <img src="src/assets/rockpommelsband_neu.svg" alt="Rockpommel's Band Writing" />
             </div> */}
 
-            <Card>
+            <div>
                 <div className={styles.rpbWriting}>
-                    <img src="src/assets/rockpommelsband.svg" alt="Rockpommel's Band Writing" className="filter" />
+                    <img src="src/assets/rockpommelsband_neu.svg" alt="Rockpommel's Band Writing" className="filter" />
                 </div>
 
-                <div className={styles.textWrapper}>
+                <div className={styles.bigTextWrapper}>
                     <h2>Die Premiere einer neuen/alten Band!</h2>
                     <h3>Sechs ehemalige <span className="emphasized">Grobschnitt</span>-Musiker und ihre Freunde
                         zelebrieren die einzigartige Musik der Hagener Kultband in großer Besetzung.</h3>
                 </div>
-            </Card>
+            </div>
 
             <Card>
                 <div className={styles.ünpWriting}>
                     <img src="src/assets/übernextparty_v3.svg" alt="Übernext Party Writing" className="filter" />
                 </div>
 
-                <div className={styles.ünpTextWrapper}>
+                <div className={styles.bigTextWrapper}>
                     <span>Am Freitag, 3. Oktober und am Samstag, 4. Oktober im</span>
                     <Link to={"https://werkhof-kulturzentrum.de/"}>WERKHOF KULTURZENTRUM e.V. in Hagen (Hohenlimburg)</Link>
 
                     <span>Tickets: Wer bei diesem besonderen Erlebnis dabei sein will, kann Tickets
-                        zum Preis von 32,-€ ………….</span>
+                        zum Preis von 35,-€ ………….</span>
 
                 </div>
                 {/* </Card> */}
@@ -40,6 +40,7 @@ export const Home = () => {
                 {/* <Card> */}
 
                 <div className={styles.textWrapper}>
+                    <h2>Die Reise geht weiter</h2>
                     <p>Nachdem die Band <span className="emphasized">Grobschnitt</span> 2012 in der Essener Gruga-Halle ihr letztes Konzert in voller „elektrischer“ Besetzung gegeben hat und sie nun seit einigen Jahren als <span className="emphasized">Grobschnitt Acoustic Party</span> mit großem Erfolg durch Deutschland tourt, haben sich weitere sechs ehemalige Bandmitglieder entschlossen unter neuem Namen die Musik von Grobschnitt auch wieder in großer Besetzung zu präsentieren.<br />
                         Da die Rechte am Namen bei der Acoustic Band liegen, sie aber deutlich machen wollten, was ihr musikalischer Background ist, werden sie als <span className="emphasized">Rockpommel's Band</span> Konzerte geben, um ihr Publikum mit der bekannten Kultmusik in lange vermisste Sphären zu entführen. </p>
 

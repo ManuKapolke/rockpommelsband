@@ -5,9 +5,17 @@ type PersonImageProps = {
     person: Person;
     isActive: boolean;
     onClick: () => void;
+    zIndex: number;
+    onHoverChange?: (isHovered: boolean) => void;
 };
 
-export const PersonImage = ({ person, onClick, isActive }: PersonImageProps) => {
+export const PersonImage = ({
+    person,
+    onClick,
+    isActive,
+    zIndex,
+    onHoverChange
+}: PersonImageProps) => {
     const { bwSrc, colorSrc } = person;
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const imgRef = useRef<HTMLImageElement | null>(null);
@@ -59,21 +67,34 @@ export const PersonImage = ({ person, onClick, isActive }: PersonImageProps) => 
             try {
                 const pixel = ctx.getImageData(x, y, 1, 1).data;
                 const alpha = pixel[3];
-                setIsHovered(alpha > 10);
+                const newHoverState = alpha > 10;
 
-                // Debug
-                console.log(`Mouse at (${x}, ${y}), Alpha: ${alpha}, Hovered: ${alpha > 10}`);
+                if (newHoverState !== isHovered) {
+                    setIsHovered(newHoverState);
+                    if (onHoverChange) {
+                        onHoverChange(newHoverState);
+                    }
+                }
             } catch (err) {
                 console.error("Error checking pixel data:", err);
                 setIsHovered(false);
+                if (onHoverChange) {
+                    onHoverChange(false);
+                }
             }
         } else {
             setIsHovered(false);
+            if (onHoverChange) {
+                onHoverChange(false);
+            }
         }
     };
 
     const handleMouseLeave = () => {
         setIsHovered(false);
+        if (onHoverChange) {
+            onHoverChange(false);
+        }
     };
 
     const handleClick = () => {
@@ -89,6 +110,9 @@ export const PersonImage = ({ person, onClick, isActive }: PersonImageProps) => 
                 top: 0,
                 left: 0,
                 pointerEvents: "auto",
+                width: "100%",
+                height: "100%",
+                zIndex: zIndex,
             }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -107,7 +131,7 @@ export const PersonImage = ({ person, onClick, isActive }: PersonImageProps) => 
                 }}
                 onLoad={() => {
                     if (imgRef.current && canvasRef.current) {
-                        console.log("Image dimensions:", {
+                        console.log(`Image ${person.name} dimensions:`, {
                             displayed: {
                                 width: imgRef.current.clientWidth,
                                 height: imgRef.current.clientHeight

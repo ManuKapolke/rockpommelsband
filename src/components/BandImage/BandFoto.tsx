@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { PersonImage } from "./PersonImage";
-import { Person, persons } from "../../utils/persons";
-import { useMousePosition } from "../../hooks/useMousePosition";
+import { persons } from "../../utils/persons";
 import styles from "./BandFoto.module.less";
 
 export const BandFoto = () => {
-    const [activePersons, setActivePersons] = useState<Record<Person["name"], boolean>>({});
     const [isHovered, setIsHovered] = useState(false);
     const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
 

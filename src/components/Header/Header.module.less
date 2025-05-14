@@ -17,9 +17,15 @@
 }
 
 .logo img {
-  color: blue;
   height: 40px;
   width: auto;
+  filter: drop-shadow(0 0 1px var(--font-color-emphasized));
+  will-change: filter;
+  transition: filter 200ms;
+
+  &:hover {
+    filter: drop-shadow(0 0 2px var(--font-color-emphasized));
+  }
 }
 
 .navList {

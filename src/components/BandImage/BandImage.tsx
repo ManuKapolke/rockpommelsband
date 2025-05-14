@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PersonImage } from "./PersonImage";
-import { Person, persons } from "./persons";
+import { Person, persons } from "../../utils/persons";
 
 export const BandImage = () => {
     const [activePersons, setActivePersons] = useState<Record<Person["name"], boolean>>({});

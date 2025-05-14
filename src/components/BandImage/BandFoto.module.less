@@ -1,0 +1,13 @@
+.bandImage {
+    @width: calc(100vw - 2 * var(--page-side-padding));
+    position: relative;
+    width: @width;
+    height: calc(@width * 0.6667); // 3:2 aspect ratio
+    margin: 0 auto; // Center the container
+}
+
+.personImage {
+    position: absolute;
+    will-change: filter;
+    transition: filter 1000ms;
+}

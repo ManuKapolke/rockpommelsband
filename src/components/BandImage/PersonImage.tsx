@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Person } from "./persons";
+import { Person } from "../../utils/persons";
 
 type PersonImageProps = {
     person: Person;

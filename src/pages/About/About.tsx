@@ -1,32 +1,47 @@
-import { BandImage } from "../../components/BandImage/BandImage";
+// import { BandImage } from "../../components/BandImage/BandImage";
+import { Fragment } from "react";
+import { persons } from "../../utils/persons";
 import { Card } from "../../components/Card/Card";
 import styles from "./About.module.less";
 
 export const About = () => {
-    return <div>
-        <BandImage />
-        {/* <img src="src/assets/img/band/IMG_8643-removebg_cut_kevin.png" alt="Band" /> */}
-        <Card style={{ marginTop: "-124px", paddingTop: "108px", display: "none" }}>
-            {/* <img src="src/assets/img/IMG_8658_nobg.png" alt="Band" /> */}
-            {/* <div className={styles.imageWrapper}>
-                <img src="src/assets/übernextparty_v3.svg" alt="Übernext Party Writing" className="filter" />
-            </div> */}
+    // const [isHighlighted, setIsHighlighted] = useState(false);
 
+    // useEffect(() => {
+    //     let cancelled = false;
+    //     const highlightSequence = async () => {
+    //         setIsHighlighted(true);
+    //         await new Promise(res => setTimeout(res, 1000));
+    //         setIsHighlighted(false);
+    //     };
+    //     highlightSequence();
+    //     return () => { cancelled = true; };
+    // }, []);
+
+
+    return <>
+        {/* <BandImage /> */}
+        {/* <BandFoto /> */}
+        <div className={styles.imageWrapper}>
+            <img src="src/assets/img/band/IMG_8643-removebg_cut.png" alt="Band" className={styles.filterFoto}
+            // style={{
+            //     filter: isHighlighted ? "drop-shadow(0 0 1em var(--font-color-emphasized))" : undefined,
+            // }} 
+            />
+        </div>
+        <Card style={{ marginTop: "-124px", paddingTop: "124px" }}>
             <div className={styles.textWrapper}>
-                {/* <h2>Keine Tribute-Band. Kein Cover-Projekt. Sondern echte Grobschnitt-DNA</h2> */}
-
-                <p>Mit dabei sind:<br />
-                    🎤 <b>Toni Moff Mollo</b>, Urgrobschnitter am Mikrofon<br />
-                    🎸 <b>Milla Kapolke</b>, langjähriger Bassist<br />
-                    🥁 <b>Admiral Top Sahne Möller</b>, Drummer der Extraklasse<br />
-                    🎶 <b>Manu Kapolke</b> (Gitarre), <b>Deva Tattva</b> (Keyboards) und <b>Demian Hache</b> (Drums) – alle aus der letzten Grobschnitt-Besetzung<br /><br />
-                    Und neu dabei:<br />
-                    🎸 <b>Kevin Hollmann</b>, Gitarrist mit Tribute-Erfahrung aus Nebelreise<br />
-                    🎤 <b>Armin Krull</b>, Sänger mit Herz und Stimme</p>
-
-                <p>Gemeinsam verfolgen sie ein klares Ziel:<br />
-                    <b>Die einzigartige Musik von Grobschnitt in ihrer ganzen Vielfalt, Energie und Tiefe zurück auf die Bühne zu bringen – für langjährige Fans und neue Entdecker.</b>
-                </p>
+                <h2>Rockpommel's Band <span style={{ textTransform: "lowercase" }}>sind (v.l.n.r.)</span>:</h2>
+                <div className={styles.bandGrid}>
+                    {persons.map((person) => (
+                        <Fragment key={person.name}>
+                            <div className={styles.instrumentEmoji}>{person.instrumentEmoji}</div>
+                            <div className={styles.personName}>{person.name}</div>
+                            <div className={styles.personInstrument}>{person.instrument}</div>
+                        </Fragment>
+                    ))}
+                </div>
             </div>
-        </Card ></div>;
+        </Card >
+    </>;
 };

@@ -1,22 +1,25 @@
-import { Link } from "react-router-dom";
 import { Card } from "../../components/Card/Card";
 import styles from "./Home.module.less";
 import { DividerRule } from "../../components/DividerRule/DividerRule";
+import { Typewriter } from "../../components/Typewriter/Typewriter";
+import { motion } from "motion/react";
+
+export const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { opacity: { duration: 1, ease: "easeInOut" } } }
+};
 
 export const Home = () => {
     return (
         <div className={styles.contentWrapper}>
-            {/* <div className={styles.rpbWriting}>
-                <img src="src/assets/rockpommelsband_neu.svg" alt="Rockpommel's Band Writing" />
-            </div> */}
-
             <div>
                 <div className={styles.rpbWriting}>
-                    <img src="src/assets/rockpommelsband_neu.svg" alt="Rockpommel's Band Writing" className="filter" />
+                    <motion.img src="src/assets/rockpommelsband_neu.svg" alt="Rockpommel's Band Writing" className="filter"
+                        variants={fadeInVariants} initial="hidden" animate="visible" />
                 </div>
 
                 <div className={styles.bigTextWrapper}>
-                    <h2>Die Premiere einer neuen/alten Band!</h2>
+                    <Typewriter text="Die Premiere einer neuen/alten Band!" />
                     <h3>Sechs ehemalige <span className="emphasized">Grobschnitt</span>-Musiker und ihre Freunde
                         zelebrieren die einzigartige Musik der Hagener Kultband in großer Besetzung.</h3>
                 </div>
@@ -24,23 +27,30 @@ export const Home = () => {
 
             <Card>
                 <div className={styles.ünpWriting}>
-                    <img src="src/assets/übernextparty_v3.svg" alt="Übernext Party Writing" className="filter" />
+                    <motion.img src="src/assets/übernextparty_v3.svg" alt="Übernext Party Writing" className="filter" variants={fadeInVariants} initial="hidden" whileInView="visible"
+                        viewport={{ once: true }} />
                 </div>
 
                 <div className={styles.bigTextWrapper}>
-                    <span>Am Freitag, 3. Oktober und am Samstag, 4. Oktober im</span>
-                    <Link to={"https://werkhof-kulturzentrum.de/"}>WERKHOF KULTURZENTRUM e.V. in Hagen (Hohenlimburg)</Link>
+                    <b>Am Freitag, 3. Oktober und am Samstag, 4. Oktober im</b>
+                    <b>WERKHOF KULTURZENTRUM e.V. in Hagen (Hohenlimburg)</b>
 
-                    <span>Tickets: Wer bei diesem besonderen Erlebnis dabei sein will, kann Tickets
-                        zum Preis von 35,-€ ………….</span>
+                    <div>
+                        <h3>Tickets:</h3>
+                        <span>Wer bei diesem besonderen Erlebnis dabei sein will, kann Tickets
+                            zum Preis von 35,-€ direkt auf der Seite des Werkhofs bestellen:</span>
+                    </div>
 
+                    <div className={styles.ticketLinks}>
+                        <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"} target="_blank">...zu den Tickets für Freitag, 03.10.2025</a>
+                        <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"}>...zu den Tickets für Samstag, 04.10.2025</a>
+                    </div>
                 </div>
-                {/* </Card> */}
+
                 <DividerRule />
-                {/* <Card> */}
 
                 <div className={styles.textWrapper}>
-                    <h2>Die Reise geht weiter</h2>
+                    <Typewriter text="Die Reise geht weiter" />
                     <p>Nachdem die Band <span className="emphasized">Grobschnitt</span> 2012 in der Essener Gruga-Halle ihr letztes Konzert in voller „elektrischer“ Besetzung gegeben hat und sie nun seit einigen Jahren als <span className="emphasized">Grobschnitt Acoustic Party</span> mit großem Erfolg durch Deutschland tourt, haben sich weitere sechs ehemalige Bandmitglieder entschlossen unter neuem Namen die Musik von Grobschnitt auch wieder in großer Besetzung zu präsentieren.<br />
                         Da die Rechte am Namen bei der Acoustic Band liegen, sie aber deutlich machen wollten, was ihr musikalischer Background ist, werden sie als <span className="emphasized">Rockpommel's Band</span> Konzerte geben, um ihr Publikum mit der bekannten Kultmusik in lange vermisste Sphären zu entführen. </p>
 

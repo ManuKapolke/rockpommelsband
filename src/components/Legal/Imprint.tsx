@@ -22,7 +22,8 @@ export const Imprint = () => {
 
             <section>
                 <h3>Referenzen</h3>
-                <p>Papierflieger-Icon erstellt durch David Khai vom <a href="https://thenounproject.com/browse/icons/term/paper-plane/" target="_blank" title="paper plane Icons">Noun Project</a> (CC BY 3.0)</p>
+                <p>Bandfoto von Ralf Dreger.<br />
+                    Papierflieger-Icon erstellt durch David Khai vom <a href="https://thenounproject.com/browse/icons/term/paper-plane/" target="_blank" title="paper plane Icons">Noun Project</a> (CC BY 3.0).</p>
             </section>
 
             <section>

@@ -3,6 +3,9 @@ import { Fragment } from "react";
 import { persons } from "../../utils/persons";
 import { Card } from "../../components/Card/Card";
 import styles from "./About.module.less";
+import { Typewriter } from "../../components/Typewriter/Typewriter";
+import { motion } from "motion/react";
+import { fadeInVariants } from "../Home/Home";
 
 export const About = () => {
     // const [isHighlighted, setIsHighlighted] = useState(false);
@@ -23,7 +26,7 @@ export const About = () => {
         {/* <BandImage /> */}
         {/* <BandFoto /> */}
         <div className={styles.imageWrapper}>
-            <img src="src/assets/img/band/IMG_8643-removebg_cut.png" alt="Band" className={styles.filterFoto}
+            <img src="src/assets/img/band/IMG_8643-removebg_cut_small.png" alt="Band" className={styles.filterFoto}
             // style={{
             //     filter: isHighlighted ? "drop-shadow(0 0 1em var(--font-color-emphasized))" : undefined,
             // }} 
@@ -31,7 +34,7 @@ export const About = () => {
         </div>
         <Card style={{ marginTop: "-124px", paddingTop: "124px" }}>
             <div className={styles.textWrapper}>
-                <h2>Rockpommel's Band <span style={{ textTransform: "lowercase" }}>sind (v.l.n.r.)</span>:</h2>
+                <Typewriter text={"ROCKPOMMEL'S BAND sind (v.l.n.r.):"} style={{ textTransform: "unset" }} />
                 <div className={styles.bandGrid}>
                     {persons.map((person) => (
                         <Fragment key={person.name}>

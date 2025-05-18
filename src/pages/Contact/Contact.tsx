@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Card } from "../../components/Card/Card";
 import { Typewriter } from "../../components/Typewriter/Typewriter";
 import styles from "./Contact.module.less";
-import { fadeInVariants } from "../Home/Home";
+import { zoomInVariants } from "../Home/Home";
 import ÜnpV1Img from '../../assets/übernextparty_v1.svg';
 // import PaperplaneIcon from '../../assets/papierflieger.svg';
 
@@ -11,7 +11,7 @@ export const Contact = () => {
     return <div className={styles.contentWrapper}>
         <div className={styles.imageWrapper}>
             <motion.img src={ÜnpV1Img} alt="Übernext Party Writing" className="filter"
-                variants={fadeInVariants} initial="hidden" animate="visible" />
+                variants={zoomInVariants} initial="small" animate="normal" />
             {/* <motion.img src={PaperplaneIcon} alt="Paper Plane" className="filter"
                 variants={fadeInVariants} initial="hidden" animate="visible" /> */}
         </div>

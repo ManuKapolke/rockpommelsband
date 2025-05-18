@@ -5,11 +5,28 @@ import { Typewriter } from "../../components/Typewriter/Typewriter";
 import { motion } from "motion/react";
 import RPBWriting from '../../assets/rockpommelsband_neu.svg';
 import ÜnpV3Img from '../../assets/übernextparty_v3.svg';
+import { Button } from "../../components/Button/Button";
 
 
 export const fadeInVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { opacity: { duration: 1, ease: "easeInOut" } } }
+    visible: { opacity: 1, transition: { opacity: { duration: 1, ease: "easeOut" } } }
+};
+
+
+export const zoomInVariants = {
+    small: { opacity: 0, scale: 0.95 },
+    normal: { opacity: 1, scale: 1, transition: { opacity: { duration: 1, ease: "ease" }, scale: { duration: 1, ease: "easeInOut" } } }
+};
+
+export const slideInFromBelowVariants = {
+    shifted: { opacity: 0, translateY: 5 },
+    normal: { opacity: 1, translateY: 0, transition: { opacity: { duration: 1, ease: "easeOut" }, translateY: { duration: 1, ease: "easeInOut" } } }
+};
+
+export const slideInFromRightVariants = {
+    shifted: { opacity: 0, translateX: 5 },
+    normal: { opacity: 1, translateX: 0, transition: { opacity: { duration: 1, ease: "easeOut" }, translateX: { duration: 1, ease: "easeInOut" } } }
 };
 
 export const Home = () => {
@@ -18,7 +35,7 @@ export const Home = () => {
             <div>
                 <div className={styles.rpbWriting}>
                     <motion.img src={RPBWriting} alt="Rockpommel's Band Writing" className="filter"
-                        variants={fadeInVariants} initial="hidden" animate="visible" />
+                        variants={zoomInVariants} initial="small" animate="normal" />
                 </div>
 
                 <div className={styles.bigTextWrapper}>
@@ -30,7 +47,7 @@ export const Home = () => {
 
             <Card>
                 <div className={styles.ünpWriting}>
-                    <motion.img src={ÜnpV3Img} alt="Übernext Party Writing" className="filter" variants={fadeInVariants} initial="hidden" whileInView="visible"
+                    <motion.img src={ÜnpV3Img} alt="Übernext Party Writing" className="filter" variants={slideInFromBelowVariants} initial="shifted" whileInView="normal"
                         viewport={{ once: true }} />
                 </div>
 
@@ -38,15 +55,21 @@ export const Home = () => {
                     <b>Am Freitag, 3. Oktober und am Samstag, 4. Oktober im</b>
                     <b>WERKHOF KULTURZENTRUM e.V. in Hagen (Hohenlimburg)</b>
 
-                    <div>
+                    <div className={styles.ticketText}>
                         <h3>Tickets:</h3>
                         <span>Wer bei diesem besonderen Erlebnis dabei sein will, kann Tickets
                             zum Preis von 35,-€ direkt auf der Seite des Werkhofs bestellen:</span>
                     </div>
 
                     <div className={styles.ticketLinks}>
-                        <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"} target="_blank">...zu den Tickets für Freitag, 03.10.2025</a>
-                        <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"}>...zu den Tickets für Samstag, 04.10.2025</a>
+                        <Button onClick={() => window.open("https://werkhof-kulturzentrum.de/rockpommels-band", "_blank")}>
+                            <span>Tickets für Freitag, 03.10.2025</span>
+                        </Button>
+                        <Button onClick={() => window.open("https://werkhof-kulturzentrum.de/rockpommels-band", "_blank")}>
+                            <span>Tickets für Samstag, 04.10.2025</span>
+                        </Button>
+                        {/* <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"} target="_blank">...zu den Tickets für Freitag, 03.10.2025</a>
+                        <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"}>...zu den Tickets für Samstag, 04.10.2025</a> */}
                     </div>
                 </div>
 

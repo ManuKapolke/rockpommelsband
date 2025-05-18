@@ -3,6 +3,9 @@ import styles from "./Home.module.less";
 import { DividerRule } from "../../components/DividerRule/DividerRule";
 import { Typewriter } from "../../components/Typewriter/Typewriter";
 import { motion } from "motion/react";
+import RPBWriting from '../../assets/rockpommelsband_neu.svg';
+import ÜnpV3Img from '../../assets/übernextparty_v3.svg';
+
 
 export const fadeInVariants = {
     hidden: { opacity: 0 },
@@ -14,7 +17,7 @@ export const Home = () => {
         <div className={styles.contentWrapper}>
             <div>
                 <div className={styles.rpbWriting}>
-                    <motion.img src="src/assets/rockpommelsband_neu.svg" alt="Rockpommel's Band Writing" className="filter"
+                    <motion.img src={RPBWriting} alt="Rockpommel's Band Writing" className="filter"
                         variants={fadeInVariants} initial="hidden" animate="visible" />
                 </div>
 
@@ -27,7 +30,7 @@ export const Home = () => {
 
             <Card>
                 <div className={styles.ünpWriting}>
-                    <motion.img src="src/assets/übernextparty_v3.svg" alt="Übernext Party Writing" className="filter" variants={fadeInVariants} initial="hidden" whileInView="visible"
+                    <motion.img src={ÜnpV3Img} alt="Übernext Party Writing" className="filter" variants={fadeInVariants} initial="hidden" whileInView="visible"
                         viewport={{ once: true }} />
                 </div>
 

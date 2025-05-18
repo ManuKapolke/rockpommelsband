@@ -4,8 +4,14 @@ import { persons } from "../../utils/persons";
 import { Card } from "../../components/Card/Card";
 import styles from "./About.module.less";
 import { Typewriter } from "../../components/Typewriter/Typewriter";
-import { motion } from "motion/react";
-import { fadeInVariants } from "../Home/Home";
+import BandImg from '../../assets/img/band/IMG_8643-removebg_cut_small.png';
+import { motion, Variants } from "motion/react";
+import React from "react";
+
+export const imgFadeInVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { opacity: { duration: 3, ease: "easeInOut" } } }
+};
 
 export const About = () => {
     // const [isHighlighted, setIsHighlighted] = useState(false);
@@ -21,12 +27,24 @@ export const About = () => {
     //     return () => { cancelled = true; };
     // }, []);
 
+    const [imgLoaded, setImgLoaded] = React.useState(false);
+
+    React.useEffect(() => {
+        const img = new window.Image();
+        img.src = BandImg;
+        img.onload = () => setImgLoaded(true);
+    }, []);
+
+    if (!imgLoaded) {
+        return <div style={{ width: "900px", height: "600px" }} />; // Oder ein Spinner/Loader
+    }
 
     return <>
         {/* <BandImage /> */}
         {/* <BandFoto /> */}
         <div className={styles.imageWrapper}>
-            <img src="src/assets/img/band/IMG_8643-removebg_cut_small.png" alt="Band" className={styles.filterFoto}
+            <motion.img src={BandImg} alt="Band" className={styles.filterFoto}
+                variants={imgFadeInVariants} initial="hidden" animate="visible"
             // style={{
             //     filter: isHighlighted ? "drop-shadow(0 0 1em var(--font-color-emphasized))" : undefined,
             // }} 

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.less';
 import React from 'react';
+import PaperplaneIcon from '../../assets/papierflieger.svg';
 
 export const Header = () => {
     React.useEffect(() => {
@@ -23,7 +24,7 @@ export const Header = () => {
         <header className={styles.root}>
             <a href="/" className={styles.logo}>
                 {/* <SvgPaperPlane /> */}
-                <img src="src/assets/papierflieger.svg" alt="Paper Plane Logo" />
+                <img src={PaperplaneIcon} alt="Paper Plane Logo" />
             </a>
             <nav>
                 <ul className={styles.navList}>

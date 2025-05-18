@@ -3,13 +3,17 @@ import { Card } from "../../components/Card/Card";
 import { Typewriter } from "../../components/Typewriter/Typewriter";
 import styles from "./Contact.module.less";
 import { fadeInVariants } from "../Home/Home";
+import ÜnpV1Img from '../../assets/übernextparty_v1.svg';
+// import PaperplaneIcon from '../../assets/papierflieger.svg';
+
 
 export const Contact = () => {
     return <div className={styles.contentWrapper}>
         <div className={styles.imageWrapper}>
-            {/* <img src="src/assets/rockpommelsband_neu.svg" alt="Rockpommel's Band Writing" className="filter" /> */}
-            <motion.img src="src/assets/übernextparty_v1.svg" alt="Übernext Party Writing" className="filter"
+            <motion.img src={ÜnpV1Img} alt="Übernext Party Writing" className="filter"
                 variants={fadeInVariants} initial="hidden" animate="visible" />
+            {/* <motion.img src={PaperplaneIcon} alt="Paper Plane" className="filter"
+                variants={fadeInVariants} initial="hidden" animate="visible" /> */}
         </div>
         <Card>
             <div className={styles.textWrapper}>

@@ -50,7 +50,7 @@ export const About = () => {
             // }} 
             />
         </div>
-        <Card style={{ marginTop: "-124px", paddingTop: "124px" }}>
+        <Card style={{ marginTop: "-180px", paddingTop: "180px" }}>
             <div className={styles.textWrapper}>
                 <Typewriter text={"ROCKPOMMEL'S BAND sind (v.l.n.r.):"} style={{ textTransform: "unset" }} />
                 <div className={styles.bandGrid}>

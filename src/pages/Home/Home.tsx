@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import RPBWriting from '../../assets/rockpommelsband_neu.svg';
 import ÜnpV3Img from '../../assets/übernextparty_v3.svg';
 import { LinkButton } from "../../components/Button/Button";
+import React from "react";
 
 
 export const fadeInVariants = {
@@ -30,6 +31,27 @@ export const slideInFromRightVariants = {
 };
 
 export const Home = () => {
+    const [imgLoaded, setImgLoaded] = React.useState(false);
+
+    React.useEffect(() => {
+        let loadedCount = 0;
+        const handleLoad = () => {
+            loadedCount += 1;
+            if (loadedCount === 2) {
+                setImgLoaded(true);
+            }
+        };
+        const img1 = new window.Image();
+        const img2 = new window.Image();
+        img1.src = RPBWriting;
+        img2.src = ÜnpV3Img;
+        img1.onload = handleLoad;
+        img2.onload = handleLoad;
+    }, []);
+
+    if (!imgLoaded) {
+        return null; // Oder ein Spinner/Loader
+    }
     return (
         <div className={styles.contentWrapper}>
             <div>

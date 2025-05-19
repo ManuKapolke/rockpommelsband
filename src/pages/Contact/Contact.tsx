@@ -4,10 +4,23 @@ import { Typewriter } from "../../components/Typewriter/Typewriter";
 import styles from "./Contact.module.less";
 import { zoomInVariants } from "../Home/Home";
 import ÜnpV1Img from '../../assets/übernextparty_v1.svg';
+import React from "react";
 // import PaperplaneIcon from '../../assets/papierflieger.svg';
 
 
 export const Contact = () => {
+    const [imgLoaded, setImgLoaded] = React.useState(false);
+
+    React.useEffect(() => {
+        const img = new window.Image();
+        img.src = ÜnpV1Img;
+        img.onload = () => setImgLoaded(true);
+    }, []);
+
+    if (!imgLoaded) {
+        return null; // Oder ein Spinner/Loader
+    }
+
     return <div className={styles.contentWrapper}>
         <div className={styles.imageWrapper}>
             <motion.img src={ÜnpV1Img} alt="Übernext Party Writing" className="filter"

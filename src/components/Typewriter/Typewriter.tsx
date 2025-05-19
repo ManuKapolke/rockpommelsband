@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 export const sentenceVariants = {
     hidden: {},
     // change staggerChildren variable to speed up or slow down typing.
-    visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.07 } }
 };
 
 export const letterVariants = {

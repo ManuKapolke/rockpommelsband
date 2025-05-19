@@ -1,3 +1,5 @@
+@import "../../global-styles.less";
+
 .root {
   position: fixed;
   top: 0;
@@ -6,13 +8,17 @@
   height: 80px;
   z-index: 1;
   display: grid;
-  grid-template-columns: 128px 1fr;
+  grid-template-columns: 80px 1fr;
   align-items: center;
   padding: 8px 64px 8px 16px;
   background-color: var(--header-color-bg);
 
   &.scrolled {
     backdrop-filter: blur(10px);
+  }
+
+  @media @breakpoint-tablet {
+    padding-inline-end: var(--page-side-padding);
   }
 }
 
@@ -32,6 +38,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 32px;
+  padding-inline-start: unset;
 
   li {
     list-style: none;
@@ -49,5 +56,9 @@
         color: var(--font-color-hover);
       }
     }
+  }
+
+  @media @breakpoint-mobile {
+    gap: 24px;
   }
 }

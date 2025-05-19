@@ -1,5 +1,8 @@
 @import "./fonts.less";
 
+@breakpoint-tablet: ~"(max-width: 768px)";
+@breakpoint-mobile: ~"(max-width: 480px)";
+
 /* Custom global styles */
 :root {
     --page-top-padding: 120px;
@@ -48,6 +51,16 @@ html {
         0.2px 14.7px 15px -2.3px hsl(var(--shadow-color) / 0.19),
         0.3px 22.8px 23.3px -2.7px hsl(var(--shadow-color) / 0.17),
         0.4px 34.2px 34.9px -3.2px hsl(var(--shadow-color) / 0.16);
+
+    font-size: 16px;
+
+    @media @breakpoint-tablet {
+        font-size: 14px;
+    }
+
+    @media @breakpoint-mobile {
+        font-size: 12px;
+    }
 }
 
 body {

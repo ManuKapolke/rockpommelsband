@@ -1,3 +1,5 @@
+@import "../../global-styles.less";
+
 .contentWrapper {
     display: flex;
     flex-direction: column;
@@ -18,7 +20,11 @@
 }
 
 .ünpWriting img {
-    width: 60%;
+    width: 76%;
+
+    @media @breakpoint-tablet {
+        width: 100%;
+    }
 }
 
 .textWrapper {

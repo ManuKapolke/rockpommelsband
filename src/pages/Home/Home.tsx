@@ -5,7 +5,7 @@ import { Typewriter } from "../../components/Typewriter/Typewriter";
 import { motion } from "motion/react";
 import RPBWriting from '../../assets/rockpommelsband_neu.svg';
 import ÜnpV3Img from '../../assets/übernextparty_v3.svg';
-import { Button } from "../../components/Button/Button";
+import { LinkButton } from "../../components/Button/Button";
 
 
 export const fadeInVariants = {
@@ -62,12 +62,12 @@ export const Home = () => {
                     </div>
 
                     <div className={styles.ticketLinks}>
-                        <Button onClick={() => window.open("https://werkhof-kulturzentrum.de/rockpommels-band", "_blank")}>
+                        <LinkButton href="https://werkhof-kulturzentrum.de/rockpommels-band" target="_blank">
                             <span>Tickets für Freitag, 03.10.2025</span>
-                        </Button>
-                        <Button onClick={() => window.open("https://werkhof-kulturzentrum.de/rockpommels-band", "_blank")}>
+                        </LinkButton>
+                        <LinkButton href="https://werkhof-kulturzentrum.de/rockpommels-band-2" target="_blank">
                             <span>Tickets für Samstag, 04.10.2025</span>
-                        </Button>
+                        </LinkButton>
                         {/* <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"} target="_blank">...zu den Tickets für Freitag, 03.10.2025</a>
                         <a href={"https://werkhof-kulturzentrum.de/rockpommels-band"}>...zu den Tickets für Samstag, 04.10.2025</a> */}
                     </div>

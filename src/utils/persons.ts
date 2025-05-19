@@ -32,7 +32,7 @@ export const persons: Array<Person> = [
     },
     {
         name: "Demian Hache",
-        instrument: "Schlagzeug, Percussion",
+        instrument: "Schlagzeug",
         instrumentEmoji: "🥁",
         bwSrc: "src/assets/img/band/IMG_8643-removebg_cut_demi_bw.png",
         colorSrc: "src/assets/img/band/IMG_8643-removebg_cut_demi.png",

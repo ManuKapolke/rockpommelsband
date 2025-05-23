@@ -3,7 +3,7 @@ import styles from "./Home.module.less";
 import { DividerRule } from "../../components/DividerRule/DividerRule";
 import { Typewriter } from "../../components/Typewriter/Typewriter";
 import { motion } from "motion/react";
-import RPBWriting from '../../assets/rockpommelsband_neu.svg';
+import RPBWriting from '../../assets/rockpommelsband.svg';
 import ÜnpV3Img from '../../assets/übernextparty_v3.svg';
 import { LinkButton } from "../../components/Button/Button";
 import React from "react";

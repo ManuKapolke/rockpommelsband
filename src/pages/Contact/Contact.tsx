@@ -4,6 +4,9 @@ import { Typewriter } from "../../components/Typewriter/Typewriter";
 import styles from "./Contact.module.less";
 import { zoomInVariants } from "../Home/Home";
 import ÜnpV1Img from '../../assets/übernextparty_v1.svg';
+import FacebookIcon from '../../assets/icons/facebook.svg';
+import MailIcon from '../../assets/icons/email.svg';
+import AtIcon from '../../assets/icons/at-symbol.svg';
 import React from "react";
 // import PaperplaneIcon from '../../assets/papierflieger.svg';
 
@@ -33,8 +36,9 @@ export const Contact = () => {
                 <Typewriter text="Kontakt" />
                 <p>Für Anfragen, Buchungen und weitere Informationen stehen wir gerne zur Verfügung.</p>
                 <div className={styles.contactGrid}>
-                    <span>Email:</span> <a href='mailto:info@rockpommelsband.com'>info@rockpommelsband.com</a>
-                    <span>Post:</span> <p>Rockpommel's Band<br />Detlef Müller-Hache<br />Hülsberg 37<br />42349 Wuppertal</p>
+                    <span className={styles.contactCategory}><img src={AtIcon} /> Email:</span> <a href='mailto:info@rockpommelsband.com'>info@rockpommelsband.com</a>
+                    <span className={styles.contactCategory}><img src={FacebookIcon} /> Facebook:</span> <a href='https://facebook.com/rockpommelsband' target="_blank">facebook.com/rockpommelsband</a>
+                    <span className={styles.contactCategory}><img src={MailIcon} /> Post:</span> <p>Rockpommel's Band<br />Hülsberg 37<br />42349 Wuppertal</p>
                 </div>
             </div>
         </Card>

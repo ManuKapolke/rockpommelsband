@@ -4,8 +4,8 @@ import { Layout } from "../../pages/Layout/Layout";
 import { Home } from "../../pages/Home/Home";
 import { About } from "../../pages/About/About";
 import { Contact } from "../../pages/Contact/Contact";
-import { PrivacyERecht } from "../Legal/Privacy";
-import { Imprint } from "../Legal/Imprint";
+import { PrivacyERecht } from "../../pages/Legal/Privacy";
+import { Imprint } from "../../pages/Legal/Imprint";
 
 export const App = () => {
   return (

@@ -2,7 +2,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "../../pages/Layout/Layout";
 import { Home } from "../../pages/Home/Home";
-import { Anzeige } from "../../pages/Home/Anzeige";
 import { About } from "../../pages/About/About";
 import { Contact } from "../../pages/Contact/Contact";
 import { PrivacyERecht } from "../Legal/Privacy";
@@ -23,7 +22,6 @@ export const App = () => {
           {/* <Route path="*" element={<NoPage />} /> */}
           <Route path="imprint" element={<Imprint />} />
           <Route path="privacy" element={<PrivacyERecht />} />
-          <Route path="anzeige" element={<Anzeige />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.module.less';
 import React from 'react';
 import PaperplaneIcon from '../../assets/papierflieger.svg';
+import PaperplaneLightIcon from '../../assets/papierflieger-hell.svg';
 
 export const Header = () => {
     React.useEffect(() => {
@@ -20,11 +21,21 @@ export const Header = () => {
         };
     }, []);
 
+    const [isLogoHovered, setIsLogoHovered] = React.useState(false);
+
     return (
         <header className={styles.root}>
-            <a href="/" className={styles.logo}>
+            <a
+                href="/"
+                className={styles.logo}
+                onMouseEnter={() => setIsLogoHovered(true)}
+                onMouseLeave={() => setIsLogoHovered(false)}
+            >
                 {/* <SvgPaperPlane /> */}
-                <img src={PaperplaneIcon} alt="Paper Plane Logo" />
+                <img
+                    src={isLogoHovered ? PaperplaneLightIcon : PaperplaneIcon}
+                    alt="Paper Plane Logo"
+                />
             </a>
             <nav>
                 <ul className={styles.navList}>

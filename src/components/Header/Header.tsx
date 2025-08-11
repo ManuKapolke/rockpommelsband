@@ -4,6 +4,8 @@ import React from 'react';
 import PaperplaneIcon from '../../assets/papierflieger.svg';
 import PaperplaneLightIcon from '../../assets/papierflieger-hell.svg';
 
+// TODO: Aktuelle Seite in hover Farbe
+// TODO: Burger-Menü
 export const Header = () => {
     React.useEffect(() => {
         const handleScroll = () => {
@@ -42,9 +44,9 @@ export const Header = () => {
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
-                    {/* <li>
-                        <NavLink to="/konzerte">Konzerte</NavLink>
-                    </li> */}
+                    <li>
+                        <NavLink to="/dates">Termine</NavLink>
+                    </li>
                     <li>
                         <NavLink to="/about">Band</NavLink>
                     </li>

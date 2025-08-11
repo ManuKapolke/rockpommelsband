@@ -6,6 +6,7 @@ import { About } from "../../pages/About/About";
 import { Contact } from "../../pages/Contact/Contact";
 import { PrivacyERecht } from "../../pages/Legal/Privacy";
 import { Imprint } from "../../pages/Legal/Imprint";
+import { Concerts } from "../../pages/Concerts/Concerts";
 
 export const App = () => {
   return (
@@ -13,7 +14,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="konzerte" element={<Concerts />} /> */}
+          <Route path="dates" element={<Concerts />} />
           <Route path="about" element={<About />} />
           {/* <Route path="press" element={<Press />} />
           <Route path="gallery" element={<Gallery />} />

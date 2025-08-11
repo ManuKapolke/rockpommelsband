@@ -63,7 +63,7 @@ export const Home = () => {
                 <div className={styles.bigTextWrapper}>
                     <Typewriter text="Die Premiere einer neuen/alten Band!" />
                     <h3>Sechs ehemalige <span className="emphasized">Grobschnitt</span>-Musiker und ihre Freunde
-                        zelebrieren die einzigartige Musik der Hagener Kultband in großer Besetzung.</h3>
+                        zelebrieren die einzigartige Musik der Hagener Kultband.</h3>
                 </div>
             </div>
 

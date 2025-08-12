@@ -48,12 +48,12 @@
       text-decoration: none;
       color: var(--font-color-main);
 
-      &.active {
-        color: var(--font-color-headline);
+      &:hover:not([aria-current="page"]) {
+        color: var(--font-color-hover);
       }
 
-      &:hover {
-        color: var(--font-color-hover);
+      &[aria-current="page"] {
+        color: var(--font-color-headline);
       }
     }
   }

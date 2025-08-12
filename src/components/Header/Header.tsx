@@ -45,10 +45,24 @@ export const Header = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/termine">Termine</NavLink>
+            <NavLink
+              to="/termine"
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
+            >
+              Termine
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/band">Band</NavLink>
+            <NavLink
+              to="/band"
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
+            >
+              Band
+            </NavLink>
           </li>
           {/* <li>
                         <NavLink to="/press">Pressespiegel</NavLink>
@@ -60,7 +74,14 @@ export const Header = () => {
                         <NavLink to="/video">Videos</NavLink>
                     </li> */}
           <li>
-            <NavLink to="/kontakt">Kontakt</NavLink>
+            <NavLink
+              to="/kontakt"
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
+            >
+              Kontakt
+            </NavLink>
           </li>
         </ul>
       </nav>

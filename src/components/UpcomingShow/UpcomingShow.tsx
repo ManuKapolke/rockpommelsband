@@ -22,7 +22,7 @@ export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
             <span className={styles.soldOut}>Ausverkauft</span>
           ) : tickets ? (
             <a href={tickets} target="_blank" rel="noopener noreferrer">
-              →&nbsp;Tickets
+              <strong>→&nbsp;Tickets</strong>
             </a>
           ) : null}
         </span>

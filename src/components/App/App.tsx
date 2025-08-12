@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "../../pages/Layout/Layout";
 import { Home } from "../../pages/Home/Home";
@@ -14,15 +13,15 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="dates" element={<Concerts />} />
-          <Route path="about" element={<About />} />
+          <Route path="termine" element={<Concerts />} />
+          <Route path="band" element={<About />} />
           {/* <Route path="press" element={<Press />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="video" element={<Video />} /> */}
-          <Route path="contact" element={<Contact />} />
+          <Route path="kontakt" element={<Contact />} />
           {/* <Route path="*" element={<NoPage />} /> */}
-          <Route path="imprint" element={<Imprint />} />
-          <Route path="privacy" element={<PrivacyERecht />} />
+          <Route path="impressum" element={<Imprint />} />
+          <Route path="datenschutz" element={<PrivacyERecht />} />
         </Route>
       </Routes>
     </BrowserRouter>

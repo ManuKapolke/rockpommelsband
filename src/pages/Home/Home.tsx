@@ -205,7 +205,7 @@ export const Home = () => {
             <UpcomingShow concert={übernextConcert} />
           </div>
           <span>
-            Alle weiteren Termine findet ihr <Link to="dates">hier</Link>.
+            Alle weiteren Termine findet ihr <Link to="termine">hier</Link>.
           </span>
         </div>
       </Card>

@@ -1,62 +1,68 @@
 @import "../../global-styles.less";
 
 .contentWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .rpbWriting,
 .ünpWriting {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-block-end: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 40px;
 }
 
 .rpbWriting img {
-    width: 100%;
-    filter: drop-shadow(0 0 2px var(--font-color-emphasized));
+  width: 100%;
+  filter: drop-shadow(0 0 2px var(--font-color-emphasized));
 }
 
 .ünpWriting img {
-    width: 76%;
+  width: 76%;
 
-    @media @breakpoint-tablet {
-        width: 100%;
-    }
+  @media @breakpoint-tablet {
+    width: 100%;
+  }
 }
 
 .textWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .bigTextWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
-    font-size: 1.5em;
-    color: var(--font-color-headline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  font-size: 1.5em;
+  color: var(--font-color-headline);
 
-    h2,
-    h3 {
-        color: var(--font-color-emphasized)
-    }
+  h2,
+  h3 {
+    color: var(--font-color-emphasized);
+  }
 }
 
 .ticketText {
-    color: var(--font-color-emphasized);
-    margin-block: 20px;
+  color: var(--font-color-emphasized);
+  margin-block: 20px;
 }
 
 .ticketLinks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px 40px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 40px;
+  flex-wrap: wrap;
+}
+
+.upcomingShows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

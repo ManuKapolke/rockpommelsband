@@ -10,21 +10,21 @@ export type Concert = {
 export const concerts: Array<Concert> = [
   {
     date: "03.10.2025",
-    city: "Hagen",
+    city: "HAGEN",
     location: "Werkhof Kulturzentrum",
     tickets: "https://werkhof-kulturzentrum.de/rockpommels-band",
     soldOut: true,
   },
   {
     date: "04.10.2025",
-    city: "Hagen",
+    city: "HAGEN",
     location: "Werkhof Kulturzentrum",
     tickets: "https://werkhof-kulturzentrum.de/rockpommels-band-2",
     soldOut: true,
   },
   {
     date: "21.03.2026",
-    city: "Paderborn",
+    city: "PADERBORN",
     event: "Paderborner Rockfestival",
     location: "PaderHalle",
     tickets:
@@ -32,7 +32,7 @@ export const concerts: Array<Concert> = [
   },
   {
     date: "11.04.2026",
-    city: "Reichenbach",
+    city: "REICHENBACH",
     event: "Artrock Festival",
     location: "Neuberinhaus",
     tickets: "https://prog-rock.club",

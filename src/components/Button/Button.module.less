@@ -2,15 +2,18 @@
   padding: 8px 24px;
   border: none;
   border-radius: 4px;
-  background: linear-gradient(to top,
-      hsl(245deg 50% 30%),
-      hsl(280deg 60% 44%));
+  background: linear-gradient(to top, hsl(245deg 50% 30%), hsl(280deg 60% 44%));
   color: var(--font-color-main);
   font-weight: 600;
   font-size: 1.25rem;
   cursor: pointer;
   outline-offset: 4px;
   transition: all 200ms;
+
+  &.small {
+    padding: 4px 16px;
+    font-size: 1rem;
+  }
 
   &:hover {
     color: var(--font-color-main);

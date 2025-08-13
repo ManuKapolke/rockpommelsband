@@ -28,7 +28,8 @@ export const concerts: Array<Concert> = [
     event: "Paderborner Rockfestival",
     location: "PaderHalle",
     tickets:
-      "https://www.eventim.de/eventseries/paderborner-rockfestival-2026-3939589",
+      "https://www.paderhalle.de/veranstaltungen/paderborner-rockfestival-26719/",
+    // "https://www.eventim.de/eventseries/paderborner-rockfestival-2026-3939589",
   },
   {
     date: "11.04.2026",

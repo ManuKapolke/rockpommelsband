@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./UpcomingShow.module.less";
 import { type Concert } from "../../pages/Concerts/concertData";
+import { LinkButton } from "../Button/Button";
 
 export type UpcomingShowProps = {
   concert: Concert;
@@ -21,9 +22,14 @@ export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
           {soldOut ? (
             <span className={styles.soldOut}>Ausverkauft</span>
           ) : tickets ? (
-            <a href={tickets} target="_blank" rel="noopener noreferrer">
-              <strong>→&nbsp;Tickets</strong>
-            </a>
+            <LinkButton
+              small
+              href={tickets}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tickets
+            </LinkButton>
           ) : null}
         </span>
       </span>

@@ -1,49 +1,55 @@
 .contentWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
 
-    a {
-        color: inherit;
-        text-decoration: underline;
-    }
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
 .imageWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-block-end: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 32px;
 
-    img {
-        width: clamp(100px, 50%, 300px);
-        filter: drop-shadow(0 0 2px var(--font-color-emphasized));
+  img {
+    width: clamp(100px, 80%, 300px);
+    filter: drop-shadow(0 0 2px var(--rpb-color-b));
+    will-change: filter;
+    transition: filter 1000ms;
+
+    &:hover {
+      filter: drop-shadow(0 0 1em var(--rpb-color-b));
     }
+  }
 }
 
 .textWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .contactGrid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 12px 24px;
-    align-items: start;
-    font-weight: 600;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 24px;
+  align-items: start;
+  font-weight: 600;
 }
 
 .contactCategory {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
-    img {
-        width: 1.25em;
-        height: 1.25em;
-    }
+  img {
+    width: 1.25em;
+    height: 1.25em;
+  }
 }

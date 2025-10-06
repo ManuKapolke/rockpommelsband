@@ -23,6 +23,12 @@ export const concerts: Array<Concert> = [
     soldOut: true,
   },
   {
+    date: "06.03.2026",
+    city: "MENDEN",
+    location: "Wilhelmshöhe",
+    tickets: "https://www.phono-forum.de/produkt/rockpommels-band-menden/",
+  },
+  {
     date: "21.03.2026",
     city: "PADERBORN",
     event: "Paderborner Rockfestival",

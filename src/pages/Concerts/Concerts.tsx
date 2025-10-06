@@ -36,19 +36,19 @@ export const Concerts = () => {
                 variants={fadeInVariants} initial="hidden" animate="visible" /> */}
       </div>
       <Card style={{ width: "100%" }}>
-        <Typewriter text="2025" />
+        <Typewriter text="2026" />
         <div className={styles.upcomingShows}>
           {concerts
-            .filter((concert) => concert.date.endsWith("2025"))
+            .filter((concert) => concert.date.endsWith("2026"))
             .map((concert) => (
               <UpcomingShow key={concert.date} concert={concert} />
             ))}
         </div>
 
-        <Typewriter text="2026" />
+        <Typewriter text="2025" />
         <div className={styles.upcomingShows}>
           {concerts
-            .filter((concert) => concert.date.endsWith("2026"))
+            .filter((concert) => concert.date.endsWith("2025"))
             .map((concert) => (
               <UpcomingShow key={concert.date} concert={concert} />
             ))}

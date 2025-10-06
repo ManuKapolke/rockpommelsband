@@ -57,8 +57,8 @@ export const slideInFromRightVariants = {
 export const Home = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
-  const nextConcert = concerts[0];
-  const übernextConcert = concerts[1];
+  const nextConcert = concerts[2];
+  const übernextConcert = concerts[3];
 
   React.useEffect(() => {
     let loadedCount = 0;
@@ -188,10 +188,11 @@ export const Home = () => {
             <b>
               Eine große Besetzung, die sich als Ziel gesetzt hat, die
               einzigartige Musik der deutschen Kultband wieder live auf die
-              Bühne zu bringen. Und deshalb gibt es als Premiere – wie
+              Bühne zu bringen...
+              {/* Und deshalb gibt es als Premiere – wie
               seinerzeit beim Startschuss der{" "}
               <span className="emphasized">Next Party</span> im Mai 2007 – zwei
-              Konzerte im legendären Werkhof...
+              Konzerte im legendären Werkhof... */}
             </b>
           </p>
         </div>

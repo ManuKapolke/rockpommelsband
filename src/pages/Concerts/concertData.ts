@@ -44,4 +44,11 @@ export const concerts: Array<Concert> = [
     location: "Neuberinhaus",
     tickets: "https://prog-rock.club",
   },
+  {
+    date: "16.05.2026",
+    city: "MESCHEDE",
+    location: "Stadthalle",
+    tickets:
+      "https://www.eventim.de/event/rockpommels-band-live-2026-stadthalle-meschede-20857565/",
+  },
 ];

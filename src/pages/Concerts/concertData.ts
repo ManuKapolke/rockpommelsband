@@ -51,4 +51,17 @@ export const concerts: Array<Concert> = [
     tickets:
       "https://www.eventim.de/event/rockpommels-band-live-2026-stadthalle-meschede-20857565/",
   },
+  {
+    date: "01.08.2026",
+    city: "BURG HERZBERG",
+    location: "Herzberg Festival",
+    tickets: "https://herzberg-festival.com/tickets/",
+  },
+  {
+    date: "10.10.2026",
+    city: "ASCHAFFENBURG",
+    location: "Colos-Saal",
+    tickets:
+      "https://colos-saal.de/komplettes-programm/programm-nach-genres/classicrock-hardrock/rockpommels-band.html",
+  },
 ];

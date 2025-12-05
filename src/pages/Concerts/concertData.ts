@@ -52,6 +52,12 @@ export const concerts: Array<Concert> = [
       "https://www.eventim.de/event/rockpommels-band-live-2026-stadthalle-meschede-20857565/",
   },
   {
+    date: "23.05.2026",
+    city: "ZOETERMEER (NL)",
+    location: "Poppodium Boerderij",
+    tickets: "https://poppodiumboerderij.nl/en/programma/rockpommelsband/",
+  },
+  {
     date: "01.08.2026",
     city: "BURG HERZBERG",
     location: "Herzberg Festival",

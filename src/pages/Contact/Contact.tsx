@@ -6,6 +6,7 @@ import styles from "./Contact.module.less";
 import { fadeInVariants } from "../Home/Home";
 // import ÜnpV1Img from '../../assets/übernextparty_v1.svg';
 import FacebookIcon from "../../assets/icons/facebook.svg";
+import InstagramIcon from "../../assets/icons/instagram-logo-facebook-svgrepo-com.svg";
 import MailIcon from "../../assets/icons/email.svg";
 import AtIcon from "../../assets/icons/at-symbol.svg";
 import React from "react";
@@ -57,6 +58,12 @@ export const Contact = () => {
             </span>{" "}
             <a href="https://facebook.com/rockpommelsband" target="_blank">
               facebook.com/rockpommelsband
+            </a>
+            <span className={styles.contactCategory}>
+              <img src={InstagramIcon} /> Instagram:
+            </span>{" "}
+            <a href="https://instagram.com/rockpommelsband" target="_blank">
+              instagram.com/rockpommelsband
             </a>
             <span className={styles.contactCategory}>
               <img src={MailIcon} /> Post:

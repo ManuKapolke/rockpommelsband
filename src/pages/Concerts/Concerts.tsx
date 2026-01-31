@@ -7,6 +7,7 @@ import { concerts } from "./concertData";
 import styles from "./Concerts.module.less";
 import { zoomInVariants } from "../Home/Home";
 import ÜnpV1Img from "../../assets/übernextparty_v1.svg";
+import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/x_00828810.jpg";
 
 export const Concerts = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
@@ -23,7 +24,7 @@ export const Concerts = () => {
 
   return (
     <div className={styles.contentWrapper}>
-      <div className={styles.imageWrapper}>
+      {/* <div className={styles.imageWrapper}>
         <motion.img
           src={ÜnpV1Img}
           alt="Übernext Party Writing"
@@ -32,10 +33,20 @@ export const Concerts = () => {
           initial="small"
           animate="normal"
         />
-        {/* <motion.img src={PaperplaneIcon} alt="Paper Plane" className="filter"
-                variants={fadeInVariants} initial="hidden" animate="visible" /> */}
-      </div>
+      </div> */}
+
       <Card style={{ width: "100%" }}>
+        <div className={styles.liveImg}>
+          <motion.img
+            src={LiveImg}
+            alt="RBP live on stage"
+            variants={zoomInVariants}
+            initial="small"
+            whileInView="normal"
+            viewport={{ once: true }}
+          />
+        </div>
+
         <Typewriter text="2026" />
         <div className={styles.upcomingShows}>
           {concerts

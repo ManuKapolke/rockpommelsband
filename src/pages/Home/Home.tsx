@@ -5,6 +5,7 @@ import { Typewriter } from "../../components/Typewriter/Typewriter";
 import { motion } from "motion/react";
 import RPBWriting from "../../assets/rockpommelsband.svg";
 import ÜnpV3Img from "../../assets/übernextparty_v3.svg";
+import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/x_00828779.jpg";
 import React from "react";
 import { concerts } from "../Concerts/concertData";
 import { Link } from "react-router-dom";
@@ -104,13 +105,23 @@ export const Home = () => {
       </div>
 
       <Card>
-        <div className={styles.ünpWriting}>
+        {/* <div className={styles.ünpWriting}>
           <motion.img
             src={ÜnpV3Img}
             alt="Übernext Party Writing"
             className="filter"
             variants={slideInFromBelowVariants}
             initial="shifted"
+            whileInView="normal"
+            viewport={{ once: true }}
+          />
+        </div> */}
+        <div className={styles.liveImg}>
+          <motion.img
+            src={LiveImg}
+            alt="RBP live on stage"
+            variants={zoomInVariants}
+            initial="small"
             whileInView="normal"
             viewport={{ once: true }}
           />

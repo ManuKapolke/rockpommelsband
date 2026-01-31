@@ -1,3 +1,12 @@
+import KevinImg from "../assets/img/gallery/2025-10-03_Hagen/Manfred_Sommer/5V3A9432.jpg";
+import ManuImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2049_3 1 7 81 91.jpg";
+import DemianImg from "../assets/img/gallery/2025-10-04_Hagen/Thomas_Borchard/2025_10_003_0006_3 1 7 81 91.jpg";
+import ArminImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2069_3 1 7 81 91.jpg";
+import ToniImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2057_3 1 7 81 91.jpg";
+import MillaImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2068_3 1 7 81 91.jpg";
+import RolfImg from "../assets/img/band/x_00828674_cut.jpg";
+import TattvaImg from "../assets/img/band/2025_10_003_2307_3 1 7 81 91_cut.jpg";
+
 export type Person = {
   name: string;
   instrument: string;
@@ -23,8 +32,7 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Kevin spielte viele Jahre bei der Grobschnitt Tribute Band Nebelreise. Als Rockpommel's Band gegründet wurde und man dazu einen weiteren Gitarristen brauchte, war schnell klar, dass er mit seinem virtuosen und gefühlvollen Spiel genau der richtige war.",
-    photo:
-      "src/assets/img/gallery/2025-10-03_Hagen/Manfred_Sommer/5V3A9432.JPG",
+    photo: KevinImg,
   },
   {
     name: "Manu Kapolke",
@@ -37,8 +45,7 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Manu spielte von 2007–2012 bei GROBSCHNITT. Er spielt schon seit frühester Jugend in verschiedenen Bands und ist auch bei GREEN und dem Projekt Symphonic Floyd ein prägender Musiker. Er ist ein Multiinstrumentalist, beeindruckend sowohl an der E- als auch an der Akustik Gitarre, an den Keyboards und als Sänger.",
-    photo:
-      "src/assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2049_3 1 7 81 91.jpg",
+    photo: ManuImg,
   },
   {
     name: "Demian Hache",
@@ -51,8 +58,7 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Von 2007–2012 spielte Demian Schlagzeug und Percussion bei GROBSCHNITT. Mit seinem virtuosen Spiel löst er bei einigen Titeln ATS Rolf Möller am Schlagzeug ab, übernimmt ansonsten den wichtigen Percussion Part und ist häufig an den Keyboards zu finden.",
-    photo:
-      "src/assets/img/gallery/2025-10-04_Hagen/Thomas_Borchard/2025_10_003_0006_3 1 7 81 91.jpg",
+    photo: DemianImg,
   },
   {
     name: "Armin Krull",
@@ -65,8 +71,7 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Armin ist ein erfahrener Musiker, der in vielen Hagener Bands erfolgreich mitgemischt hat. Er ist Multiinstrumentalist, hat Musik studiert und beherrscht neben der Gitarre auch Keyboards, Violine und Saxophon. Vor allem aber ist er ein hervorragender Sänger, der wunderbar zu der Musik von Rockpommel's Band passt.",
-    photo:
-      "src/assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2069_3 1 7 81 91.jpg",
+    photo: ArminImg,
   },
   {
     name: "Toni Moff Mollo",
@@ -79,8 +84,7 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Toni war schon in den 70ern von Anfang an bei GROBSCHNITT und brachte auch den Namen in die Band. War er zunächst hauptsächlich für Licht und Showeinlagen zuständig, entwickelte er sich später mit seiner powervollen Stimme immer mehr zu einem weiteren Leadsänger der Band.",
-    photo:
-      "src/assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2057_3 1 7 81 91.jpg",
+    photo: ToniImg,
   },
   {
     name: "Milla Kapolke",
@@ -93,8 +97,7 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Milla spielte von 1980 bis Mitte 1988 und von 2007–2012 bei GROBSCHNITT.Spielte außerdem erfolgreich in verschiedenen Bands wie GREEN, Marrakesh Express und dem sehr erfolgreichen Projekt Symphonic Floyd. Bei Grobschnitt war er unter anderem für die Texte zuständig. Mit seinem einfühlsamen Bassspiel und seiner speziellen charismatischen Bühnenpräsenz ist er ein wichtiger Faktor für die besondere Atmosphäre bei den Live-Konzerten.",
-    photo:
-      "src/assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2068_3 1 7 81 91.jpg",
+    photo: MillaImg,
   },
   {
     name: "Rolf ATS Möller",
@@ -107,7 +110,7 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Rolf war von Mitte 1986 bis 1989 und von 2007–2012 der Drummer bei GROBSCHNITT. Er ist ebenfalls Drummer bei der bekannten Hagener Topband EXTRABREIT. Aber auch mit GREEN und dem Großprojekt Symphonic Floyd war er erfolgreich. Jeder, der ihn einmal live erleben durfte, ist von seinem powervollen, dynamischen Spiel begeistert.",
-    photo: "src/assets/img/x_00828674_cut.jpg",
+    photo: RolfImg,
   },
   {
     name: "Deva Tattva",
@@ -120,6 +123,6 @@ export const persons: Array<Person> = [
     height: "800px",
     description:
       "Deva spielte von 2007–2012 die Keyboards bei GROBSCHNITT. Er spielte viele Jahre bei MARRAKESH EXPRESS und ist auch bei Green und bei Symphonic Floyd an den Keyboards. Er ist Spezialist für wunderschöne Klangteppiche, gefühlvolle Soli und aufregende Sounds.",
-    photo: "src/assets/img/2025_10_003_2307_3 1 7 81 91_cut.jpg",
+    photo: TattvaImg,
   },
 ];

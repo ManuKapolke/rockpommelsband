@@ -7,6 +7,7 @@ import { Typewriter } from "../../components/Typewriter/Typewriter";
 import BandImg from "../../assets/img/band/IMG_8643-removebg_cut_small.png";
 import { motion, Variants } from "motion/react";
 import React from "react";
+import { getOptimizedImageUrl } from "../Gallery/galleryData";
 
 export const imgFadeInVariants: Variants = {
   hidden: { opacity: 0 },
@@ -109,7 +110,10 @@ export const About = () => {
         >
           <div className={styles.memberCardGrid}>
             <div className={styles.memberPhoto}>
-              <img src={person.photo} alt={person.name} />
+              <img
+                src={getOptimizedImageUrl(person.photo, 400)}
+                alt={person.name}
+              />
             </div>
             <div className={styles.memberInfo}>
               <div className={styles.memberName}>{person.name}</div>

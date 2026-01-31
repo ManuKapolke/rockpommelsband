@@ -8,6 +8,7 @@ import styles from "./Concerts.module.less";
 import { zoomInVariants } from "../Home/Home";
 import ÜnpV1Img from "../../assets/übernextparty_v1.svg";
 import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/x_00828810.jpg";
+import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 
 export const Concerts = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
@@ -38,7 +39,9 @@ export const Concerts = () => {
       <Card style={{ width: "100%" }}>
         <div className={styles.liveImg}>
           <motion.img
-            src={LiveImg}
+            // src={LiveImg}
+            src={getOptimizedImageUrl(LiveImg, 1920)}
+            srcSet={getSrcSet(LiveImg, 1920)}
             alt="RBP live on stage"
             variants={zoomInVariants}
             initial="small"

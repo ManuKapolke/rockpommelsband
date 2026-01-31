@@ -10,6 +10,7 @@ import React from "react";
 import { concerts } from "../Concerts/concertData";
 import { Link } from "react-router-dom";
 import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
+import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 
 export const fadeInVariants = {
   hidden: { opacity: 0 },
@@ -118,7 +119,9 @@ export const Home = () => {
         </div> */}
         <div className={styles.liveImg}>
           <motion.img
-            src={LiveImg}
+            // src={LiveImg}
+            src={getOptimizedImageUrl(LiveImg, 1920)}
+            srcSet={getSrcSet(LiveImg, 1920)}
             alt="RBP live on stage"
             variants={zoomInVariants}
             initial="small"

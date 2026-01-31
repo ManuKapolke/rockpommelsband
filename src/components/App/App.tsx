@@ -6,6 +6,7 @@ import { Contact } from "../../pages/Contact/Contact";
 import { PrivacyERecht } from "../../pages/Legal/Privacy";
 import { Imprint } from "../../pages/Legal/Imprint";
 import { Concerts } from "../../pages/Concerts/Concerts";
+import { Gallery } from "../../pages/Gallery/Gallery";
 
 export const App = () => {
   return (
@@ -15,9 +16,9 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="termine" element={<Concerts />} />
           <Route path="band" element={<About />} />
-          {/* <Route path="press" element={<Press />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="video" element={<Video />} /> */}
+          {/* <Route path="press" element={<Press />} /> */}
+          <Route path="galerie" element={<Gallery />} />
+          {/* <Route path="video" element={<Video />} /> */}
           <Route path="kontakt" element={<Contact />} />
           {/* <Route path="*" element={<NoPage />} /> */}
           <Route path="impressum" element={<Imprint />} />

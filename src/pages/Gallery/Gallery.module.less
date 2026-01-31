@@ -1,0 +1,128 @@
+.emptyState {
+  text-align: center;
+  padding: 2em;
+  color: var(--font-color-emphasized);
+}
+
+.eventHeadline {
+  all: inherit;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.5em;
+  color: var(--font-color-headline);
+  cursor: pointer;
+}
+
+.imageGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+
+  &[data-state="open"] {
+    padding-block-start: 1.5em;
+    padding-block-end: 3em;
+  }
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  height: 160px;
+  transition: box-shadow 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: conic-gradient(
+    from 270deg at 75% -20%,
+    hsl(240deg 40% 5%) 50%,
+    hsl(250deg 40% 20%),
+    hsl(250deg 30% 25%),
+    hsla(230, 74%, 88%, 0.5),
+    hsl(250deg 40% 20%),
+    hsl(240deg 40% 5%)
+  );
+  opacity: 1;
+  transition: opacity 200ms ease-in-out;
+
+  @media (max-width: 768px) {
+    height: 150px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0px 10px 30px 20px hsla(0, 0%, 100%, 0.15);
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+      transition: opacity 200ms ease-in-out;
+    }
+
+    .photographerBadge {
+      opacity: 1;
+      transition: opacity 200ms ease-in-out;
+    }
+  }
+
+  &.loading {
+    opacity: 0.5;
+    transition: opacity 200ms ease-in-out;
+  }
+}
+
+.loadingPlaceholder {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: blur(8px);
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.galleryImage {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.photographerBadge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, hsl(0, 0%, 0%), transparent);
+  color: var(--font-color-main);
+  padding: 8px 12px;
+  font-size: 0.875em;
+  text-align: right;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.AccordionChevron {
+  transition: transform 300ms;
+}
+.AccordionTrigger[data-state="open"] > .AccordionChevron {
+  transform: rotate(180deg);
+}

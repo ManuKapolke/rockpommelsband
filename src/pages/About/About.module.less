@@ -1,40 +1,88 @@
-.imageWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import "../../global-styles.less";
 
-    img {
-        width: 90%;
-    }
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 90%;
+  }
 }
 
 .filterFoto {
-    will-change: filter;
-    transition: filter 2000ms;
+  will-change: filter;
+  transition: filter 2000ms;
 
-    &:hover {
-        transition: filter 1000ms;
-        filter: drop-shadow(0 0 1em var(--font-color-emphasized));
-    }
+  &:hover {
+    transition: filter 1000ms;
+    filter: drop-shadow(0 0 1em var(--font-color-emphasized));
+  }
 }
 
 .textWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 
-    h2 {
-        text-align: center;
-    }
+  h2 {
+    text-align: center;
+  }
 }
 
 .bandGrid {
-    display: grid;
-    grid-template-columns: auto minmax(80px, 140px) 1fr;
-    gap: 8px 20px;
+  display: grid;
+  grid-template-columns: auto minmax(80px, 140px) 1fr;
+  gap: 8px 20px;
 }
 
 .personName {
-    font-weight: 600;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--font-color-emphasized, #ccc);
+  }
+}
+
+.memberCardGrid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+
+  @media @breakpoint-tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.memberPhoto {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+}
+
+.memberInfo {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 12px;
+}
+
+.memberName {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--font-color-headline);
+}
+
+.memberInstrument {
+  font-size: 1.125em;
+  color: var(--font-color-emphasized, #ccc);
+}
+
+.memberDescription {
+  line-height: 1.6;
 }

@@ -4,11 +4,12 @@ type Props = {
     className?: string;
     style?: React.CSSProperties;
     children: React.ReactNode;
+    id?: string;
 };
 
-export const Card = ({ className, style, children }: Props) => {
+export const Card = ({ className, style, children, id }: Props) => {
     return (
-        <div className={`${styles.card} ${className}`} style={{ ...style }}>
+        <div id={id} className={`${styles.card} ${className}`} style={{ ...style }}>
             {children}
         </div>
     );

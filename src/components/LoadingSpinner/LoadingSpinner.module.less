@@ -1,0 +1,46 @@
+.spinner {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  opacity: 0;
+  animation: spinner-fade-in 0.3s ease-in 1s forwards;
+}
+
+@keyframes spinner-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spinnerRing {
+  width: 100%;
+  height: 100%;
+  border: 4px solid hsla(230deg 90% 95% / 20%);
+  border-top-color: var(--font-color-main);
+  border-radius: 50%;
+  animation: spinner-rotate 1s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    opacity: 1;
+  }
+
+  .spinnerRing {
+    animation: none;
+    border-top-color: var(--font-color-main);
+  }
+}

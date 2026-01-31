@@ -136,6 +136,7 @@ export const Header = () => {
     { to: "/", label: "Home" },
     { to: "/termine", label: "Termine" },
     { to: "/band", label: "Band" },
+    { to: "/galerie", label: "Galerie" },
     { to: "/kontakt", label: "Kontakt" },
   ];
 
@@ -180,11 +181,18 @@ export const Header = () => {
           </li>
           {/* <li>
                         <NavLink to="/press">Pressespiegel</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/gallery">Galerie</NavLink>
-                    </li>
-                    <li>
+                    </li> */}
+          <li>
+            <NavLink
+              to="/galerie"
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
+            >
+              Galerie
+            </NavLink>
+          </li>
+          {/* <li>
                         <NavLink to="/video">Videos</NavLink>
                     </li> */}
           <li>

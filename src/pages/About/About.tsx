@@ -8,6 +8,7 @@ import BandImg from "../../assets/img/band/IMG_8643-removebg_cut_small.png";
 import { motion, Variants } from "motion/react";
 import React from "react";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
+import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 
 export const imgFadeInVariants: Variants = {
   hidden: { opacity: 0 },
@@ -56,7 +57,11 @@ export const About = () => {
   }, []);
 
   if (!imgLoaded) {
-    return <div style={{ width: "900px", height: "600px" }} />; // Oder ein Spinner/Loader
+    return (
+      <div style={{ width: "900px", height: "600px" }}>
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   return (

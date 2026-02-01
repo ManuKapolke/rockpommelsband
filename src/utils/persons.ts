@@ -1,11 +1,11 @@
-import KevinImg from "../assets/img/gallery/2025-10-03_Hagen/Manfred_Sommer/5V3A9432.jpg";
-import ManuImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2049_3 1 7 81 91.jpg";
-import DemianImg from "../assets/img/gallery/2025-10-04_Hagen/Thomas_Borchard/2025_10_003_0006_3 1 7 81 91.jpg";
-import ArminImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2069_3 1 7 81 91.jpg";
-import ToniImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2057_3 1 7 81 91.jpg";
-import MillaImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2068_3 1 7 81 91.jpg";
+import KevinImg from "../assets/img/gallery/2025-10-03_Hagen/Manfred_Sommer/5V3A9432_1920.jpg";
+import ManuImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2049_3 1 7 81 91_1920.jpg";
+import DemianImg from "../assets/img/gallery/2025-10-04_Hagen/Thomas_Borchard/2025_10_003_0006_3 1 7 81 91_1920.jpg";
+import ArminImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2069_3 1 7 81 91_1920.jpg";
+import ToniImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2057_3 1 7 81 91_1920.jpg";
+import MillaImg from "../assets/img/gallery/2025-10-03_Hagen/Thomas_Borchard/2025_10_002_2068_3 1 7 81 91_1920.jpg";
 import RolfImg from "../assets/img/band/x_00828674_cut.jpg";
-import TattvaImg from "../assets/img/band/2025_10_003_2307_3 1 7 81 91_cut.jpg";
+import TattvaImg from "../assets/img/band/2025_10_003_2307_3 1 7 81 91_cut_1920.jpg";
 
 export type Person = {
   name: string;

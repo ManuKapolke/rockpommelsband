@@ -11,6 +11,7 @@ import MailIcon from "../../assets/icons/email.svg";
 import AtIcon from "../../assets/icons/at-symbol.svg";
 import React from "react";
 import PaperplaneLightIcon from "../../assets/papierflieger-hell.svg";
+import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 
 export const Contact = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
@@ -22,7 +23,11 @@ export const Contact = () => {
   }, []);
 
   if (!imgLoaded) {
-    return null; // Oder ein Spinner/Loader
+    return (
+      <div className={styles.contentWrapper}>
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   return (

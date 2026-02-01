@@ -1,6 +1,5 @@
 import React from "react";
 import { Card } from "../../components/Card/Card";
-import { Typewriter } from "../../components/Typewriter/Typewriter";
 import {
   getGalleryEvents,
   GalleryImage,
@@ -17,6 +16,7 @@ import {
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
 import { ChevronDown } from "react-feather";
+import { DividerRule } from "../../components/DividerRule/DividerRule";
 
 export const Gallery = () => {
   const [lightboxOpen, setLightboxOpen] = React.useState(false);
@@ -49,7 +49,7 @@ export const Gallery = () => {
             type="multiple"
             defaultValue={[events[0].formattedHeadline]}
           >
-            {events.map((event) => (
+            {events.map((event, index) => (
               <AccordionItem
                 value={event.formattedHeadline}
                 key={event.formattedHeadline}
@@ -57,9 +57,9 @@ export const Gallery = () => {
               >
                 <AccordionHeader asChild className={styles.eventHeadline}>
                   <AccordionTrigger className={styles.AccordionTrigger}>
-                    <Typewriter text={event.formattedHeadline} />
+                    <h2>{event.formattedHeadline}</h2>
                     <ChevronDown
-                      size={24}
+                      size={20}
                       strokeWidth={4}
                       className={styles.AccordionChevron}
                       aria-hidden
@@ -78,6 +78,8 @@ export const Gallery = () => {
                       onClick={() => openLightbox(event.images, imageIndex)}
                     />
                   ))}
+
+                  {index !== events.length - 1 && <DividerRule />}
                 </AccordionContent>
               </AccordionItem>
             ))}

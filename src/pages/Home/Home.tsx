@@ -11,6 +11,7 @@ import { concerts } from "../Concerts/concertData";
 import { Link } from "react-router-dom";
 import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
+import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 
 export const fadeInVariants = {
   hidden: { opacity: 0 },
@@ -79,7 +80,11 @@ export const Home = () => {
   }, []);
 
   if (!imgLoaded) {
-    return null; // Oder ein Spinner/Loader
+    return (
+      <div className={styles.contentWrapper}>
+        <LoadingSpinner />
+      </div>
+    );
   }
   return (
     <div className={styles.contentWrapper}>
@@ -119,14 +124,13 @@ export const Home = () => {
         </div> */}
         <div className={styles.liveImg}>
           <motion.img
-            // src={LiveImg}
             src={getOptimizedImageUrl(LiveImg, 1920)}
             srcSet={getSrcSet(LiveImg, 1920)}
             alt="RBP live on stage"
-            variants={zoomInVariants}
-            initial="small"
-            whileInView="normal"
-            viewport={{ once: true }}
+            // variants={zoomInVariants}
+            // initial="small"
+            // whileInView="normal"
+            // viewport={{ once: true }}
           />
         </div>
 

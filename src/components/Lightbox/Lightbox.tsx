@@ -113,8 +113,9 @@ export const Lightbox: React.FC<LightboxProps> = ({
     setMouseX(null);
   };
 
+  const isTouch = touchStartX.current !== null || touchEndX.current !== null;
   const getScreenThird = (): "left" | "middle" | "right" | null => {
-    if (mouseX === null) return null;
+    if (mouseX === null || isTouch) return null;
     const screenWidth = window.innerWidth;
     const third = screenWidth / 3;
 
@@ -150,14 +151,6 @@ export const Lightbox: React.FC<LightboxProps> = ({
           onTouchEnd={handleTouchEnd}
         >
           {!imageLoaded && <LoadingSpinner />}
-
-          <button
-            className={styles.closeButton}
-            onClick={onClose}
-            aria-label="Close lightbox"
-          >
-            <X size={32} />
-          </button>
 
           {images.length > 1 && (
             <>
@@ -224,6 +217,14 @@ export const Lightbox: React.FC<LightboxProps> = ({
               </div>
             )}
           </div>
+
+          <button
+            className={styles.closeButton}
+            onClick={onClose}
+            aria-label="Close lightbox"
+          >
+            <X size={32} />
+          </button>
         </div>
       </motion.div>
     </AnimatePresence>

@@ -1,9 +1,13 @@
 .spinner {
-  position: absolute;
   margin: auto;
   z-index: 1;
   opacity: 0;
   animation: spinner-fade-in 0.3s ease-in 1s forwards;
+
+  &.positionAbsolute {
+    position: absolute;
+    inset: calc(50% - 24px);
+  }
 }
 
 @keyframes spinner-fade-in {

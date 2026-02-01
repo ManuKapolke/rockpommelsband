@@ -57,11 +57,7 @@ export const About = () => {
   }, []);
 
   if (!imgLoaded) {
-    return (
-      <div style={{ width: "900px", height: "600px" }}>
-        <LoadingSpinner />
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   return (

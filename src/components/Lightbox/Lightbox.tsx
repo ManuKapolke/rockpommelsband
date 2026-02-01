@@ -150,7 +150,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {!imageLoaded && <LoadingSpinner />}
+          {!imageLoaded && <LoadingSpinner hasPositionAbsolute />}
 
           {images.length > 1 && (
             <>

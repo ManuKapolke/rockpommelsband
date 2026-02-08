@@ -192,9 +192,16 @@ export const Header = () => {
               Galerie
             </NavLink>
           </li>
-          {/* <li>
-                        <NavLink to="/video">Videos</NavLink>
-                    </li> */}
+          <li>
+            <NavLink
+              to="/videos"
+              className={({ isActive }) =>
+                isActive ? styles.active : undefined
+              }
+            >
+              Videos
+            </NavLink>
+          </li>
           <li>
             <NavLink
               to="/kontakt"

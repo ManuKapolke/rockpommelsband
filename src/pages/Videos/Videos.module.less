@@ -1,0 +1,38 @@
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 32px;
+
+  img {
+    width: clamp(100px, 50%, 300px);
+    filter: drop-shadow(0 0 2px var(--font-color-emphasized));
+  }
+}
+
+.liveImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 40px;
+}
+
+.liveImg img {
+  border-radius: 6px;
+}
+
+.videoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}

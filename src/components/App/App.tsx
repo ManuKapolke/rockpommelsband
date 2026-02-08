@@ -7,6 +7,7 @@ import { PrivacyERecht } from "../../pages/Legal/Privacy";
 import { Imprint } from "../../pages/Legal/Imprint";
 import { Concerts } from "../../pages/Concerts/Concerts";
 import { Gallery } from "../../pages/Gallery/Gallery";
+import { Videos } from "../../pages/Videos/Videos";
 
 export const App = () => {
   return (
@@ -18,7 +19,7 @@ export const App = () => {
           <Route path="band" element={<About />} />
           {/* <Route path="press" element={<Press />} /> */}
           <Route path="galerie" element={<Gallery />} />
-          {/* <Route path="video" element={<Video />} /> */}
+          <Route path="videos" element={<Videos />} />
           <Route path="kontakt" element={<Contact />} />
           {/* <Route path="*" element={<NoPage />} /> */}
           <Route path="impressum" element={<Imprint />} />

@@ -14,20 +14,6 @@ import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 export const Concerts = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
-  React.useEffect(() => {
-    const img = new window.Image();
-    img.src = LiveImg;
-    img.onload = () => setImgLoaded(true);
-  }, []);
-
-  if (!imgLoaded) {
-    return (
-      <div className={styles.contentWrapper}>
-        <LoadingSpinner />
-      </div>
-    );
-  }
-
   return (
     <div className={styles.contentWrapper}>
       {/* <div className={styles.imageWrapper}>
@@ -51,26 +37,33 @@ export const Concerts = () => {
             initial="small"
             whileInView="normal"
             viewport={{ once: true }}
+            onLoad={() => setImgLoaded(true)}
           />
         </div>
 
-        <Typewriter text="2026" />
-        <div className={styles.upcomingShows}>
-          {concerts
-            .filter((concert) => concert.date.endsWith("2026"))
-            .map((concert) => (
-              <UpcomingShow key={concert.date} concert={concert} />
-            ))}
-        </div>
+        {imgLoaded ? (
+          <>
+            <Typewriter text="2026" />
+            <div className={styles.upcomingShows}>
+              {concerts
+                .filter((concert) => concert.date.endsWith("2026"))
+                .map((concert) => (
+                  <UpcomingShow key={concert.date} concert={concert} />
+                ))}
+            </div>
 
-        <Typewriter text="2025" />
-        <div className={styles.upcomingShows}>
-          {concerts
-            .filter((concert) => concert.date.endsWith("2025"))
-            .map((concert) => (
-              <UpcomingShow key={concert.date} concert={concert} />
-            ))}
-        </div>
+            <Typewriter text="2025" />
+            <div className={styles.upcomingShows}>
+              {concerts
+                .filter((concert) => concert.date.endsWith("2025"))
+                .map((concert) => (
+                  <UpcomingShow key={concert.date} concert={concert} />
+                ))}
+            </div>
+          </>
+        ) : (
+          <LoadingSpinner />
+        )}
       </Card>
     </div>
   );

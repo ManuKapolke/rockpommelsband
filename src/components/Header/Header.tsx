@@ -137,6 +137,7 @@ export const Header = () => {
     { to: "/termine", label: "Termine" },
     { to: "/band", label: "Band" },
     { to: "/galerie", label: "Galerie" },
+    { to: "/videos", label: "Videos" },
     { to: "/kontakt", label: "Kontakt" },
   ];
 

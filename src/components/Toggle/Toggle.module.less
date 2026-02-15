@@ -1,0 +1,22 @@
+.wrapper {
+  display: block;
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 1000px;
+  padding: 0.125rem;
+  border: 1px solid hsl(0 0% 30%);
+  background: hsl(0 0% 30%);
+  cursor: pointer;
+
+  &.toggleOn {
+    background: var(--rpb-color-b);
+  }
+}
+
+.ball {
+  display: block;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--font-color-main);
+  border-radius: 1000px;
+}

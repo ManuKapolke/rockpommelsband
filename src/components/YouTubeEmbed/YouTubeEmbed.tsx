@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { Button } from "../Button/Button";
 import styles from "./YouTubeEmbed.module.less";
 import {
@@ -6,6 +6,7 @@ import {
   onYouTubeConsentChange,
   setYouTubeConsent,
 } from "../../utils/youtubeConsent";
+import { Toggle } from "../Toggle/Toggle";
 
 type YouTubeEmbedProps = {
   videoId: string;
@@ -16,6 +17,7 @@ type YouTubeEmbedProps = {
 export const YouTubeEmbed = ({ videoId, params, title }: YouTubeEmbedProps) => {
   const [enabled, setEnabled] = useState(false);
   const [enableAll, setEnableAll] = useState(false);
+  const enableAllToggleId = useId();
 
   // Initial & bei globalen Änderungen reagieren
   useEffect(() => {
@@ -36,6 +38,17 @@ export const YouTubeEmbed = ({ videoId, params, title }: YouTubeEmbedProps) => {
     setEnabled(true);
   };
 
+  const handleEnableAllChange = (value: boolean) => {
+    setEnableAll(value);
+    if (value) {
+      // Let the toggle visibly switch to "on" first, then load videos
+      setTimeout(() => {
+        setYouTubeConsent(true);
+        setEnabled(true);
+      }, 300);
+    }
+  };
+
   if (!enabled) {
     return (
       <div className={styles.videoPlaceholder}>
@@ -46,14 +59,15 @@ export const YouTubeEmbed = ({ videoId, params, title }: YouTubeEmbedProps) => {
           Video laden
         </Button>
 
-        <label className={styles.ytConsentAll}>
-          <input
-            type="checkbox"
-            checked={enableAll}
-            onChange={(e) => setEnableAll(e.target.checked)}
-            className={styles.ytConsentAllCheckbox}
+        <label className={styles.ytConsentAll} htmlFor={enableAllToggleId}>
+          <Toggle
+            id={enableAllToggleId}
+            value={enableAll}
+            onChange={handleEnableAllChange}
           />
-          <span>Alle Videos auf dieser Seite laden</span>
+          <span className={styles.ytConsentAllLabel}>
+            Alle Videos auf dieser Seite laden
+          </span>
         </label>
       </div>
     );

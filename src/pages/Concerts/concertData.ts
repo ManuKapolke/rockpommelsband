@@ -64,6 +64,13 @@ export const concerts: Array<Concert> = [
     tickets: "https://herzberg-festival.com/tickets/",
   },
   {
+    date: "03.10.2026",
+    city: "HAGEN",
+    location: "Stadthalle",
+    tickets:
+      "https://www.eventim.de/event/rockpommels-band-stadthalle-hagen-21162333/",
+  },
+  {
     date: "10.10.2026",
     city: "ASCHAFFENBURG",
     location: "Colos-Saal",

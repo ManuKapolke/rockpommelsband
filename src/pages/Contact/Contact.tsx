@@ -12,8 +12,10 @@ import AtIcon from "../../assets/icons/at-symbol.svg";
 import React from "react";
 import PaperplaneLightIcon from "../../assets/papierflieger-hell.svg";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
+import { useTranslation } from "../../i18n/useTranslation";
 
 export const Contact = () => {
+  const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
   React.useEffect(() => {
@@ -37,7 +39,7 @@ export const Contact = () => {
                 variants={zoomInVariants} initial="small" animate="normal" /> */}
         <motion.img
           src={PaperplaneLightIcon}
-          alt="Paper Plane"
+          alt={t({ id: "contact.altPaperPlane" })}
           //   className="filter"
           variants={fadeInVariants}
           initial="hidden"
@@ -46,32 +48,29 @@ export const Contact = () => {
       </div>
       <Card>
         <div className={styles.textWrapper}>
-          <Typewriter text="Kontakt" />
-          <p>
-            Für Anfragen, Buchungen und weitere Informationen stehen wir gerne
-            zur Verfügung.
-          </p>
+          <Typewriter text={t({ id: "contact.typewriter" })} />
+          <p>{t({ id: "contact.intro" })}</p>
           <div className={styles.contactGrid}>
             <span className={styles.contactCategory}>
-              <img src={AtIcon} /> Email:
+              <img src={AtIcon} alt="" /> {t({ id: "contact.email" })}
             </span>{" "}
             <a href="mailto:info@rockpommelsband.com">
               info@rockpommelsband.com
             </a>
             <span className={styles.contactCategory}>
-              <img src={FacebookIcon} /> Facebook:
+              <img src={FacebookIcon} alt="" /> {t({ id: "contact.facebook" })}
             </span>{" "}
             <a href="https://facebook.com/rockpommelsband" target="_blank">
               facebook.com/rockpommelsband
             </a>
             <span className={styles.contactCategory}>
-              <img src={InstagramIcon} /> Instagram:
+              <img src={InstagramIcon} alt="" /> {t({ id: "contact.instagram" })}
             </span>{" "}
             <a href="https://instagram.com/rockpommelsband" target="_blank">
               instagram.com/rockpommelsband
             </a>
             <span className={styles.contactCategory}>
-              <img src={MailIcon} /> Post:
+              <img src={MailIcon} alt="" /> {t({ id: "contact.post" })}
             </span>{" "}
             <p>
               Rockpommel's Band

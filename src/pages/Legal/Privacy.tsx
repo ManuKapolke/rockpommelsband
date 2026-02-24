@@ -1,3 +1,5 @@
+import { useLocale } from "../../i18n/LocaleContext";
+import { useTranslation } from "../../i18n/useTranslation";
 import styles from "./Privacy.module.less";
 
 export const PrivacyActiveMind = () => {
@@ -264,9 +266,17 @@ export const PrivacyActiveMind = () => {
 };
 
 export const PrivacyERecht = () => {
+  const { locale } = useLocale();
+  const { t } = useTranslation();
+
+  const isEnglish = locale === "en";
+
   return (
     <div className={styles.privacy}>
-      <h1>Datenschutz&shy;erkl&auml;rung</h1>
+      {isEnglish && (
+        <p className={styles.bindingNote}>{t({ id: "legal.bindingNote" })}</p>
+      )}
+      <h1>{t({ id: "legal.privacy.title" })}</h1>
       <section>
         <h2>1. Datenschutz auf einen Blick</h2>
         <h3>Allgemeine Hinweise</h3>
@@ -293,14 +303,14 @@ export const PrivacyERecht = () => {
         <h4>Wie erfassen wir Ihre Daten?</h4>
         <p>
           Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
-          mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie
-          in ein Kontaktformular eingeben.
+          mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein
+          Kontaktformular eingeben.
           <br />
           Andere Daten werden automatisch oder nach Ihrer Einwilligung beim
           Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem
-          technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder
-          Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt
-          automatisch, sobald Sie diese Website betreten.
+          technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit
+          des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch,
+          sobald Sie diese Website betreten.
         </p>
         <h4>Wof&uuml;r nutzen wir Ihre Daten?</h4>
         <p>
@@ -356,8 +366,8 @@ export const PrivacyERecht = () => {
           Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit.
           a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die
           Speicherung von Cookies oder den Zugriff auf Informationen im
-          Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne
-          des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.
+          Endger&auml;t des Nutzers (z.B. Device-Fingerprinting) im Sinne des
+          TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.
         </p>
         <h4>Auftragsverarbeitung</h4>{" "}
         <p>
@@ -389,7 +399,7 @@ export const PrivacyERecht = () => {
         </p>
         <p>
           Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet
-          (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken
+          (z.B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken
           aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff
           durch Dritte ist nicht m&ouml;glich.
         </p>
@@ -413,7 +423,7 @@ export const PrivacyERecht = () => {
         <p>
           Verantwortliche Stelle ist die nat&uuml;rliche oder juristische
           Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und
-          Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen,
+          Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen,
           E-Mail-Adressen o. &Auml;.) entscheidet.
         </p>
         <h3>Speicherdauer</h3>
@@ -425,9 +435,9 @@ export const PrivacyERecht = () => {
           Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten
           gel&ouml;scht, sofern wir keine anderen rechtlich zul&auml;ssigen
           Gr&uuml;nde f&uuml;r die Speicherung Ihrer personenbezogenen Daten
-          haben (z.&nbsp;B. steuer- oder handelsrechtliche
-          Aufbewahrungsfristen); im letztgenannten Fall erfolgt die
-          L&ouml;schung nach Fortfall dieser Gr&uuml;nde.
+          haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im
+          letztgenannten Fall erfolgt die L&ouml;schung nach Fortfall dieser
+          Gr&uuml;nde.
         </p>
         <h3>
           Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf
@@ -442,19 +452,19 @@ export const PrivacyERecht = () => {
           personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung
           au&szlig;erdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern
           Sie in die Speicherung von Cookies oder in den Zugriff auf
-          Informationen in Ihr Endger&auml;t (z.&nbsp;B. via
-          Device-Fingerprinting) eingewilligt haben, erfolgt die
-          Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1
-          TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur
-          Vertragserf&uuml;llung oder zur Durchf&uuml;hrung vorvertraglicher
-          Ma&szlig;nahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage
-          des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre
-          Daten, sofern diese zur Erf&uuml;llung einer rechtlichen Verpflichtung
-          erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die
-          Datenverarbeitung kann ferner auf Grundlage unseres berechtigten
-          Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. &Uuml;ber die
-          jeweils im Einzelfall einschl&auml;gigen Rechtsgrundlagen wird in den
-          folgenden Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.
+          Informationen in Ihr Endger&auml;t (z.B. via Device-Fingerprinting)
+          eingewilligt haben, erfolgt die Datenverarbeitung zus&auml;tzlich auf
+          Grundlage von &sect; 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit
+          widerrufbar. Sind Ihre Daten zur Vertragserf&uuml;llung oder zur
+          Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich,
+          verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b
+          DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur
+          Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich sind auf
+          Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann
+          ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs.
+          1 lit. f DSGVO erfolgen. &Uuml;ber die jeweils im Einzelfall
+          einschl&auml;gigen Rechtsgrundlagen wird in den folgenden
+          Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.
         </p>
         <h3>Empf&auml;nger von personenbezogenen Daten</h3>
         <p>
@@ -464,14 +474,14 @@ export const PrivacyERecht = () => {
           Stellen erforderlich. Wir geben personenbezogene Daten nur dann an
           externe Stellen weiter, wenn dies im Rahmen einer
           Vertragserf&uuml;llung erforderlich ist, wenn wir gesetzlich hierzu
-          verpflichtet sind (z.&nbsp;B. Weitergabe von Daten an
-          Steuerbeh&ouml;rden), wenn wir ein berechtigtes Interesse nach Art. 6
-          Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige
-          Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von
-          Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden
-          nur auf Grundlage eines g&uuml;ltigen Vertrags &uuml;ber
-          Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung
-          wird ein Vertrag &uuml;ber gemeinsame Verarbeitung geschlossen.
+          verpflichtet sind (z.B. Weitergabe von Daten an Steuerbeh&ouml;rden),
+          wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an
+          der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die
+          Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben
+          wir personenbezogene Daten unserer Kunden nur auf Grundlage eines
+          g&uuml;ltigen Vertrags &uuml;ber Auftragsverarbeitung weiter. Im Falle
+          einer gemeinsamen Verarbeitung wird ein Vertrag &uuml;ber gemeinsame
+          Verarbeitung geschlossen.
         </p>
         <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
         <p>
@@ -628,9 +638,9 @@ export const PrivacyERecht = () => {
           Die von Ihnen an uns per Kontaktanfragen &uuml;bersandten Daten
           verbleiben bei uns, bis Sie uns zur L&ouml;schung auffordern, Ihre
           Einwilligung zur Speicherung widerrufen oder der Zweck f&uuml;r die
-          Datenspeicherung entf&auml;llt (z.&nbsp;B. nach abgeschlossener
-          Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen
-          &ndash; insbesondere gesetzliche Aufbewahrungsfristen &ndash; bleiben
+          Datenspeicherung entf&auml;llt (z.B. nach abgeschlossener Bearbeitung
+          Ihres Anliegens). Zwingende gesetzliche Bestimmungen &ndash;
+          insbesondere gesetzliche Aufbewahrungsfristen &ndash; bleiben
           unber&uuml;hrt.
         </p>
 

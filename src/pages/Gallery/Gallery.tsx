@@ -17,8 +17,10 @@ import {
 } from "@radix-ui/react-accordion";
 import { ChevronDown } from "react-feather";
 import { DividerRule } from "../../components/DividerRule/DividerRule";
+import { useTranslation } from "../../i18n/useTranslation";
 
 export const Gallery = () => {
+  const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = React.useState(false);
   const [lightboxImages, setLightboxImages] = React.useState<GalleryImage[]>(
     []
@@ -42,7 +44,7 @@ export const Gallery = () => {
       <Card>
         {events.length === 0 ? (
           <div className={styles.emptyState}>
-            <p>Keine Bilder verfügbar.</p>
+            <p>{t({ id: "gallery.empty" })}</p>
           </div>
         ) : (
           <Accordion
@@ -105,6 +107,7 @@ type ProgressiveImageProps = {
 };
 
 const ProgressiveImage = ({ event, image, onClick }: ProgressiveImageProps) => {
+  const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = React.useState(false);
   const imgRef = React.useRef<HTMLImageElement>(null);
 
@@ -129,7 +132,9 @@ const ProgressiveImage = ({ event, image, onClick }: ProgressiveImageProps) => {
         onLoad={() => setIsLoaded(true)}
         className={styles.galleryImage}
       />
-      <div className={styles.photographerBadge}>Foto: {image.photographer}</div>
+      <div className={styles.photographerBadge}>
+        {t({ id: "gallery.photoBy" }, { name: image.photographer })}
+      </div>
     </div>
   );
 };

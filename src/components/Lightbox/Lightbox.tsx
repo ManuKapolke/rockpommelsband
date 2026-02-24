@@ -4,6 +4,7 @@ import { X, ChevronLeft, ChevronRight } from "react-feather";
 import styles from "./Lightbox.module.less";
 import { GalleryImage, getSrcSet } from "../../pages/Gallery/galleryData";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
+import { useTranslation } from "../../i18n/useTranslation";
 
 interface LightboxProps {
   images: GalleryImage[];
@@ -16,6 +17,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
   initialIndex,
   onClose,
 }) => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = React.useState(initialIndex);
   const [imageLoaded, setImageLoaded] = React.useState(false);
   const [mouseX, setMouseX] = React.useState<number | null>(null);
@@ -161,7 +163,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
                   pointerEvents: showPrevButton ? "auto" : "none",
                 }}
                 onClick={goToPrevious}
-                aria-label="Previous image"
+                aria-label={t({ id: "aria.previousImage" })}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
                   opacity: showPrevButton ? 1 : 0,
@@ -178,7 +180,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
                   pointerEvents: showNextButton ? "auto" : "none",
                 }}
                 onClick={goToNext}
-                aria-label="Next image"
+                aria-label={t({ id: "aria.nextImage" })}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
                   opacity: showNextButton ? 1 : 0,
@@ -209,7 +211,10 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
           <div className={styles.imageInfo}>
             <div className={styles.photographerInfo}>
-              Foto: {currentImage.photographer}
+              {t(
+                { id: "gallery.photoBy" },
+                { name: currentImage.photographer },
+              )}
             </div>
             {images.length > 1 && (
               <div className={styles.imageCounter}>
@@ -221,7 +226,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
           <button
             className={styles.closeButton}
             onClick={onClose}
-            aria-label="Close lightbox"
+            aria-label={t({ id: "aria.closeLightbox" })}
           >
             <X size={32} />
           </button>

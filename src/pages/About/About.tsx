@@ -9,6 +9,7 @@ import { motion, Variants } from "motion/react";
 import React from "react";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
+import { useTranslation } from "../../i18n/useTranslation";
 
 export const imgFadeInVariants: Variants = {
   hidden: { opacity: 0 },
@@ -31,6 +32,8 @@ export const About = () => {
   //     highlightSequence();
   //     return () => { cancelled = true; };
   // }, []);
+
+  const { t } = useTranslation();
 
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
@@ -67,7 +70,7 @@ export const About = () => {
       <div className={styles.imageWrapper}>
         <motion.img
           src={BandImg}
-          alt="Band"
+          alt={t({ id: "about.altBand" })}
           className={styles.filterFoto}
           variants={imgFadeInVariants}
           initial="hidden"
@@ -80,7 +83,7 @@ export const About = () => {
       <Card style={{ marginTop: "-180px", paddingTop: "180px" }}>
         <div className={styles.textWrapper}>
           <Typewriter
-            text={"ROCKPOMMEL'S BAND sind (v.l.n.r.):"}
+            text={t({ id: "about.typewriter" })}
             style={{ textTransform: "unset" }}
           />
           <div className={styles.bandGrid}>
@@ -96,7 +99,9 @@ export const About = () => {
                   {person.name}
                 </div>
                 <div className={styles.personInstrument}>
-                  {person.instrument}
+                  {t({
+                    id: `band.person.${person.name.toLowerCase().replace(/\s+/g, "-")}.instrument`,
+                  })}
                 </div>
               </Fragment>
             ))}
@@ -119,9 +124,15 @@ export const About = () => {
             </div>
             <div className={styles.memberInfo}>
               <div className={styles.memberName}>{person.name}</div>
-              <div className={styles.memberInstrument}>{person.instrument}</div>
+              <div className={styles.memberInstrument}>
+                {t({
+                  id: `band.person.${person.name.toLowerCase().replace(/\s+/g, "-")}.instrument`,
+                })}
+              </div>
               <div className={styles.memberDescription}>
-                {person.description}
+                {t({
+                  id: `band.person.${person.name.toLowerCase().replace(/\s+/g, "-")}.description`,
+                })}
               </div>
             </div>
           </div>

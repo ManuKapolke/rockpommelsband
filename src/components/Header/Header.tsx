@@ -5,8 +5,20 @@ import PaperplaneIcon from "../../assets/papierflieger.svg";
 import PaperplaneLightIcon from "../../assets/papierflieger-hell.svg";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "react-feather";
+import { useTranslation } from "../../i18n/useTranslation";
+import { LanguageSelect } from "../LanguageSelect/LanguageSelect";
+
+const navLinks: { to: string; labelId: string }[] = [
+  { to: "/", labelId: "nav.home" },
+  { to: "/termine", labelId: "nav.termine" },
+  { to: "/band", labelId: "nav.band" },
+  { to: "/galerie", labelId: "nav.galerie" },
+  { to: "/videos", labelId: "nav.videos" },
+  { to: "/kontakt", labelId: "nav.kontakt" },
+];
 
 export const Header = () => {
+  const { t } = useTranslation();
   const [isLogoHovered, setIsLogoHovered] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scrollbarWidth, setScrollbarWidth] = React.useState(0);
@@ -132,15 +144,6 @@ export const Header = () => {
     },
   };
 
-  const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/termine", label: "Termine" },
-    { to: "/band", label: "Band" },
-    { to: "/galerie", label: "Galerie" },
-    { to: "/videos", label: "Videos" },
-    { to: "/kontakt", label: "Kontakt" },
-  ];
-
   return (
     <header ref={headerRef} className={styles.root}>
       <a
@@ -149,72 +152,30 @@ export const Header = () => {
         onMouseEnter={() => setIsLogoHovered(true)}
         onMouseLeave={() => setIsLogoHovered(false)}
       >
-        {/* <SvgPaperPlane /> */}
         <img
           src={isLogoHovered ? PaperplaneLightIcon : PaperplaneIcon}
-          alt="Paper Plane Logo"
+          alt={t({ id: "logo.alt" })}
         />
       </a>
-      <nav className={styles.desktopNav}>
-        <ul className={styles.navList}>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/termine"
-              className={({ isActive }) =>
-                isActive ? styles.active : undefined
-              }
-            >
-              Termine
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/band"
-              className={({ isActive }) =>
-                isActive ? styles.active : undefined
-              }
-            >
-              Band
-            </NavLink>
-          </li>
-          {/* <li>
-                        <NavLink to="/press">Pressespiegel</NavLink>
-                    </li> */}
-          <li>
-            <NavLink
-              to="/galerie"
-              className={({ isActive }) =>
-                isActive ? styles.active : undefined
-              }
-            >
-              Galerie
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/videos"
-              className={({ isActive }) =>
-                isActive ? styles.active : undefined
-              }
-            >
-              Videos
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/kontakt"
-              className={({ isActive }) =>
-                isActive ? styles.active : undefined
-              }
-            >
-              Kontakt
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+      <div className={styles.navWrapper}>
+        <LanguageSelect />
+        <nav className={styles.desktopNav}>
+          <ul className={styles.navList}>
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    isActive ? styles.active : undefined
+                  }
+                >
+                  {t({ id: link.labelId })}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
       <button
         className={styles.burgerButton}
         style={{
@@ -224,7 +185,7 @@ export const Header = () => {
               : undefined,
         }}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
+        aria-label={t({ id: "aria.toggleMenu" })}
         aria-expanded={isMenuOpen}
       >
         <motion.div
@@ -262,7 +223,7 @@ export const Header = () => {
                         isActive ? styles.active : undefined
                       }
                     >
-                      {link.label}
+                      {t({ id: link.labelId })}
                     </NavLink>
                   </li>
                 ))}

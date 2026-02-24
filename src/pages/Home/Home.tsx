@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
+import { FormattedMessage } from "react-intl";
+import { useTranslation } from "../../i18n/useTranslation";
 
 export const fadeInVariants = {
   hidden: { opacity: 0 },
@@ -57,7 +59,12 @@ export const slideInFromRightVariants = {
   },
 };
 
+const Em = ({ children }: { children: React.ReactNode }) => (
+  <span className="emphasized">{children}</span>
+);
+
 export const Home = () => {
+  const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
   const nextConcert = concerts[2];
@@ -92,7 +99,7 @@ export const Home = () => {
         <div className={styles.rpbWriting}>
           <motion.img
             src={RPBWriting}
-            alt="Rockpommel's Band Writing"
+            alt={t({ id: "home.altRpbWriting" })}
             className="filter"
             variants={zoomInVariants}
             initial="small"
@@ -101,11 +108,12 @@ export const Home = () => {
         </div>
 
         <div className={styles.bigTextWrapper}>
-          <Typewriter text="Die Premiere einer neuen/alten Band!" />
+          <Typewriter text={t({ id: "home.typewriter.premiere" })} />
           <h3>
-            Sechs ehemalige <span className="emphasized">Grobschnitt</span>
-            -Musiker und ihre Freunde zelebrieren die einzigartige Musik der
-            Hagener Kultband.
+            <FormattedMessage
+              id="home.intro"
+              values={{ grobschnitt: <Em>Grobschnitt</Em> }}
+            />
           </h3>
         </div>
       </div>
@@ -126,7 +134,7 @@ export const Home = () => {
           <motion.img
             src={getOptimizedImageUrl(LiveImg, 1920)}
             srcSet={getSrcSet(LiveImg, 1920)}
-            alt="RBP live on stage"
+            alt={t({ id: "home.altLive" })}
             // variants={zoomInVariants}
             // initial="small"
             // whileInView="normal"
@@ -165,52 +173,38 @@ export const Home = () => {
         <DividerRule /> */}
 
         <div className={styles.textWrapper}>
-          <Typewriter text="Die Reise geht weiter" />
+          <Typewriter text={t({ id: "home.typewriter.journey" })} />
           <p>
-            Nachdem die Band <span className="emphasized">Grobschnitt</span>{" "}
-            2012 in der Essener Gruga-Halle ihr letztes Konzert in voller
-            „elektrischer“ Besetzung gegeben hat und sie nun seit einigen Jahren
-            als <span className="emphasized">Grobschnitt Acoustic Party</span>{" "}
-            mit großem Erfolg durch Deutschland tourt, haben sich weitere sechs
-            ehemalige Bandmitglieder entschlossen unter neuem Namen die Musik
-            von Grobschnitt auch wieder in großer Besetzung zu präsentieren.
-            <br />
-            Da die Rechte am Namen bei der Acoustic Band liegen, sie aber
-            deutlich machen wollten, was ihr musikalischer Background ist,
-            werden sie als <span className="emphasized">
-              Rockpommel's Band
-            </span>{" "}
-            Konzerte geben, um ihr Publikum mit der bekannten Kultmusik in lange
-            vermisste Sphären zu entführen.{" "}
+            <FormattedMessage
+              id="home.paragraph1"
+              values={{
+                grobschnitt: <Em>Grobschnitt</Em>,
+                grobschnittAcoustic: <Em>Grobschnitt Acoustic Party</Em>,
+                rockpommelsBand: <Em>Rockpommel's Band</Em>,
+              }}
+            />
           </p>
 
           <p>
-            Dass sie keine Cover- oder Tribute-Band sind, wird schon klar, wenn
-            man sieht, wer alles dabei ist. Neben dem „Ur-Grobschnitter“{" "}
-            <span className="emphasized">Toni Moff Mollo</span> am Gesang, dem
-            langjährigen Bassisten{" "}
-            <span className="emphasized">Milla Kapolke</span> und am Schlagzeug{" "}
-            <span className="emphasized">Admiral Top Sahne Möller</span> sind es
-            weiterhin aus der letzten Grobschnitt-Besetzung Gitarrist{" "}
-            <span className="emphasized">Manu Kapolke</span>, Keyboarder{" "}
-            <span className="emphasized">Deva Tattva</span> und Drummer{" "}
-            <span className="emphasized">Demian Hache</span>. Neu dabei sind an
-            der Gitarre <span className="emphasized">Kevin Hollmann</span>, der
-            viele Jahre bei der Grobschnitt Tribute-Band{" "}
-            <span className="emphasized">Nebelreise</span> geglänzt hat, sowie
-            mit Sänger <span className="emphasized">Armin Krull</span> eine
-            weitere prägende Figur der Hagener Musikszene.
+            <FormattedMessage
+              id="home.paragraph2"
+              values={{
+                toni: <Em>Toni Moff Mollo</Em>,
+                milla: <Em>Milla Kapolke</Em>,
+                rolf: <Em>Admiral Top Sahne Möller</Em>,
+                manu: <Em>Manu Kapolke</Em>,
+                deva: <Em>Deva Tattva</Em>,
+                demian: <Em>Demian Hache</Em>,
+                kevin: <Em>Kevin Hollmann</Em>,
+                nebelreise: <Em>Nebelreise</Em>,
+                armin: <Em>Armin Krull</Em>,
+              }}
+            />
           </p>
 
           <p>
             <b>
-              Eine große Besetzung, die sich als Ziel gesetzt hat, die
-              einzigartige Musik der deutschen Kultband wieder live auf die
-              Bühne zu bringen...
-              {/* Und deshalb gibt es als Premiere – wie
-              seinerzeit beim Startschuss der{" "}
-              <span className="emphasized">Next Party</span> im Mai 2007 – zwei
-              Konzerte im legendären Werkhof... */}
+              <FormattedMessage id="home.paragraph3" />
             </b>
           </p>
         </div>
@@ -218,13 +212,18 @@ export const Home = () => {
         <DividerRule />
 
         <div className={styles.textWrapper}>
-          <Typewriter text="Die nächsten Shows" />
+          <Typewriter text={t({ id: "home.typewriter.shows" })} />
           <div className={styles.upcomingShows}>
             <UpcomingShow concert={nextConcert} />
             <UpcomingShow concert={übernextConcert} />
           </div>
           <span>
-            Alle weiteren Termine findet ihr <Link to="termine">hier</Link>.
+            <FormattedMessage
+              id="home.upcomingText"
+              values={{
+                link: <Link to="termine">{t({ id: "home.upcomingLink" })}</Link>,
+              }}
+            />
           </span>
         </div>
       </Card>

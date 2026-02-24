@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { LocaleProvider } from "../../i18n/LocaleContext";
 import { Layout } from "../../pages/Layout/Layout";
 import { Home } from "../../pages/Home/Home";
 import { About } from "../../pages/About/About";
@@ -11,7 +12,8 @@ import { Videos } from "../../pages/Videos/Videos";
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <LocaleProvider>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -26,6 +28,7 @@ export const App = () => {
           <Route path="datenschutz" element={<PrivacyERecht />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </LocaleProvider>
   );
 };

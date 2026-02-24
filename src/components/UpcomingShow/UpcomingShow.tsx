@@ -2,12 +2,14 @@ import React from "react";
 import styles from "./UpcomingShow.module.less";
 import { type Concert } from "../../pages/Concerts/concertData";
 import { LinkButton } from "../Button/Button";
+import { useTranslation } from "../../i18n/useTranslation";
 
 export type UpcomingShowProps = {
   concert: Concert;
 };
 
 export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
+  const { t } = useTranslation();
   const { date, city, location, event, tickets, soldOut } = concert;
 
   return (
@@ -20,7 +22,7 @@ export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
         </span>
         <span className={styles.tickets}>
           {soldOut ? (
-            <span className={styles.soldOut}>Ausverkauft</span>
+            <span className={styles.soldOut}>{t({ id: "upcomingShow.soldOut" })}</span>
           ) : tickets ? (
             <LinkButton
               small
@@ -28,7 +30,7 @@ export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Tickets
+              {t({ id: "upcomingShow.tickets" })}
             </LinkButton>
           ) : null}
         </span>

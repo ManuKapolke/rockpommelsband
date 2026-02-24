@@ -7,8 +7,10 @@ import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/FB_IMG
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { YouTubeEmbed } from "../../components/YouTubeEmbed/YouTubeEmbed";
+import { useTranslation } from "../../i18n/useTranslation";
 
 export const Videos = () => {
+  const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
   return (
@@ -18,7 +20,7 @@ export const Videos = () => {
           <motion.img
             src={getOptimizedImageUrl(LiveImg, 1920)}
             srcSet={getSrcSet(LiveImg, 1920)}
-            alt="RBP live on stage"
+            alt={t({ id: "videos.altRbp" })}
             variants={zoomInVariants}
             initial="small"
             whileInView="normal"

@@ -6,12 +6,14 @@ import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
 import { concerts } from "./concertData";
 import styles from "./Concerts.module.less";
 import { zoomInVariants } from "../Home/Home";
+import { useTranslation } from "../../i18n/useTranslation";
 // import ÜnpV1Img from "../../assets/übernextparty_v1.svg";
 import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/x_00828810.jpg";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 
 export const Concerts = () => {
+  const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
   return (
@@ -32,7 +34,7 @@ export const Concerts = () => {
           <motion.img
             src={getOptimizedImageUrl(LiveImg, 1920)}
             srcSet={getSrcSet(LiveImg, 1920)}
-            alt="RBP live on stage"
+            alt={t({ id: "concerts.altLive" })}
             variants={zoomInVariants}
             initial="small"
             whileInView="normal"
@@ -43,7 +45,7 @@ export const Concerts = () => {
 
         {imgLoaded ? (
           <>
-            <Typewriter text="2026" />
+            <Typewriter text={t({ id: "concerts.year2026" })} />
             <div className={styles.upcomingShows}>
               {concerts
                 .filter((concert) => concert.date.endsWith("2026"))
@@ -52,7 +54,7 @@ export const Concerts = () => {
                 ))}
             </div>
 
-            <Typewriter text="2025" />
+            <Typewriter text={t({ id: "concerts.year2025" })} />
             <div className={styles.upcomingShows}>
               {concerts
                 .filter((concert) => concert.date.endsWith("2025"))

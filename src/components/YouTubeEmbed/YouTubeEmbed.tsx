@@ -7,6 +7,7 @@ import {
   setYouTubeConsent,
 } from "../../utils/youtubeConsent";
 import { Toggle } from "../Toggle/Toggle";
+import { useTranslation } from "../../i18n/useTranslation";
 
 type YouTubeEmbedProps = {
   videoId: string;
@@ -15,6 +16,7 @@ type YouTubeEmbedProps = {
 };
 
 export const YouTubeEmbed = ({ videoId, params, title }: YouTubeEmbedProps) => {
+  const { t } = useTranslation();
   const [enabled, setEnabled] = useState(false);
   const [enableAll, setEnableAll] = useState(false);
   const enableAllToggleId = useId();
@@ -53,10 +55,10 @@ export const YouTubeEmbed = ({ videoId, params, title }: YouTubeEmbedProps) => {
     return (
       <div className={styles.videoPlaceholder}>
         <p className={styles.ytConsentText}>
-          Beim Laden des Videos werden Daten an YouTube übertragen.
+          {t({ id: "youtube.consentText" })}
         </p>
-        <Button onClick={handleEnable} aria-label="YouTube-Video laden">
-          Video laden
+        <Button onClick={handleEnable} aria-label={t({ id: "aria.loadYouTube" })}>
+          {t({ id: "youtube.loadVideo" })}
         </Button>
 
         <label className={styles.ytConsentAll} htmlFor={enableAllToggleId}>
@@ -66,7 +68,7 @@ export const YouTubeEmbed = ({ videoId, params, title }: YouTubeEmbedProps) => {
             onChange={handleEnableAllChange}
           />
           <span className={styles.ytConsentAllLabel}>
-            Alle Videos auf dieser Seite laden
+            {t({ id: "youtube.loadAllVideos" })}
           </span>
         </label>
       </div>
@@ -77,7 +79,7 @@ export const YouTubeEmbed = ({ videoId, params, title }: YouTubeEmbedProps) => {
     <iframe
       className={styles.videoIframe}
       src={`https://www.youtube-nocookie.com/embed/${videoId}${params ? `?${params}` : ""}`}
-      title={title ?? "YouTube Video"}
+      title={title ?? t({ id: "youtube.defaultTitle" })}
       allow="accelerometer; encrypted-media; picture-in-picture"
       allowFullScreen
       loading="lazy"

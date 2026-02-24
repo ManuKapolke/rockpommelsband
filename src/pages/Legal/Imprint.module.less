@@ -1,24 +1,30 @@
 .imprint {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  .bindingNote {
+    opacity: 0.8;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  section {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.25em;
 
-    section {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25em;
-
-        p {
-            margin-bottom: 1.5em;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: underline;
-        }
+    p {
+      margin-bottom: 1.5em;
     }
 
-    .sourceInfo {
-        opacity: 0.5;
+    a {
+      color: inherit;
+      text-decoration: underline;
     }
+  }
+
+  .sourceInfo {
+    opacity: 0.5;
+  }
 }

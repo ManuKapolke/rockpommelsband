@@ -14,6 +14,7 @@ import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { FormattedMessage } from "react-intl";
 import { useTranslation } from "../../i18n/useTranslation";
+import { Em } from "../../components/Em/Em";
 
 export const fadeInVariants = {
   hidden: { opacity: 0 },
@@ -58,10 +59,6 @@ export const slideInFromRightVariants = {
     },
   },
 };
-
-const Em = ({ children }: { children: React.ReactNode }) => (
-  <span className="emphasized">{children}</span>
-);
 
 export const Home = () => {
   const { t } = useTranslation();
@@ -221,7 +218,9 @@ export const Home = () => {
             <FormattedMessage
               id="home.upcomingText"
               values={{
-                link: <Link to="termine">{t({ id: "home.upcomingLink" })}</Link>,
+                link: (
+                  <Link to="termine">{t({ id: "home.upcomingLink" })}</Link>
+                ),
               }}
             />
           </span>

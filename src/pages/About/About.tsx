@@ -10,6 +10,8 @@ import React from "react";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { useTranslation } from "../../i18n/useTranslation";
+import { FormattedMessage } from "react-intl";
+import { Em } from "../../components/Em/Em";
 
 export const imgFadeInVariants: Variants = {
   hidden: { opacity: 0 },
@@ -130,9 +132,39 @@ export const About = () => {
                 })}
               </div>
               <div className={styles.memberDescription}>
-                {t({
+                <FormattedMessage
+                  id={`band.person.${person.name.toLowerCase().replace(/\s+/g, "-")}.description`}
+                  values={{
+                    green: (
+                      <a href="https://green-floyd.de" target="_blank">
+                        <Em>Green</Em>
+                      </a>
+                    ),
+                    symphonicFloyd: (
+                      <a href="https://symphonic-floyd.de" target="_blank">
+                        <Em>Symphonic Floyd</Em>
+                      </a>
+                    ),
+                    extrabreit: (
+                      <a href="https://die-breiten.de" target="_blank">
+                        <Em>Extrabreit</Em>
+                      </a>
+                    ),
+                    nebelreise: (
+                      <a href="https://nebelreise.de" target="_blank">
+                        <Em>Nebelreise</Em>
+                      </a>
+                    ),
+                    neun: (
+                      <a href="http://9info.de" target="_blank">
+                        <Em>Neun</Em>
+                      </a>
+                    ),
+                  }}
+                />
+                {/* {t({
                   id: `band.person.${person.name.toLowerCase().replace(/\s+/g, "-")}.description`,
-                })}
+                })} */}
               </div>
             </div>
           </div>

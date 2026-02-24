@@ -16,7 +16,6 @@ export type Person = {
   position: { top: string; left: string };
   width: string;
   height: string;
-  description: string;
   photo: string;
 };
 
@@ -30,8 +29,6 @@ export const persons: Array<Person> = [
     position: { top: "0px", left: "0px" },
     width: "100px",
     height: "800px",
-    description:
-      "Kevin spielte viele Jahre bei der GROBSCHNITT Tribute Band NEBELREISE. Als Rockpommel's Band gegründet wurde und man dazu einen weiteren Gitarristen brauchte, war schnell klar, dass er mit seinem virtuosen und gefühlvollen Spiel genau der richtige war.",
     photo: KevinImg,
   },
   {
@@ -43,8 +40,6 @@ export const persons: Array<Person> = [
     position: { top: "200px", left: "250px" },
     width: "100px",
     height: "800px",
-    description:
-      "Manu spielte von 2007–2012 bei GROBSCHNITT. Er spielt schon seit frühester Jugend in verschiedenen Bands und ist auch bei GREEN und dem Projekt SYMPHONIC FLOYD ein prägender Musiker. Er ist ein Multiinstrumentalist, beeindruckend sowohl an der E- als auch an der Akustik Gitarre, an den Keyboards und als Sänger.",
     photo: ManuImg,
   },
   {
@@ -56,8 +51,6 @@ export const persons: Array<Person> = [
     position: { top: "300px", left: "350px" },
     width: "100px",
     height: "800px",
-    description:
-      "Von 2007–2012 spielte Demian Schlagzeug und Percussion bei GROBSCHNITT. Auch er spielte schon in vielen Bands und wirkte auch bei SYMPHONIC FLOYD mit. Mit seinem virtuosen Spiel löst er bei einigen Titeln ATS Rolf Möller am Schlagzeug ab, übernimmt ansonsten den wichtigen Percussion Part und ist häufig an den Keyboards zu finden.",
     photo: DemianImg,
   },
   {
@@ -69,8 +62,6 @@ export const persons: Array<Person> = [
     position: { top: "400px", left: "450px" },
     width: "100px",
     height: "800px",
-    description:
-      "Armin ist ein erfahrener Musiker, der in vielen Hagener Bands erfolgreich mitgemischt hat, unter anderem bei MARRAKESH EXPRESS und bei NEUN. Er ist Multiinstrumentalist, hat Musik studiert und beherrscht neben der Gitarre auch Keyboards, Violine und Saxophon. Vor allem aber ist er ein hervorragender Sänger, der wunderbar zu der Musik von Rockpommel's Band passt.",
     photo: ArminImg,
   },
   {
@@ -82,8 +73,6 @@ export const persons: Array<Person> = [
     position: { top: "500px", left: "550px" },
     width: "100px",
     height: "800px",
-    description:
-      "Toni war schon in den 70ern von Anfang an bei GROBSCHNITT und brachte auch den Namen in die Band. War er zunächst hauptsächlich für Licht und Showeinlagen zuständig, entwickelte er sich später mit seiner powervollen Stimme immer mehr zu einem weiteren Leadsänger der Band.",
     photo: ToniImg,
   },
   {
@@ -95,8 +84,6 @@ export const persons: Array<Person> = [
     position: { top: "600px", left: "650px" },
     width: "100px",
     height: "800px",
-    description:
-      "Milla spielte von 1980 bis Mitte 1988 und von 2007–2012 bei GROBSCHNITT. Er war außerdem Sänger und Bassist in verschiedenen Bands wie GREEN, MARRAKESH EXPRESS und dem sehr erfolgreichen Projekt SYMPHONIC FLOYD. Bei Grobschnitt war er unter anderem für die Texte zuständig. Mit seinem einfühlsamen Bassspiel und seiner speziellen charismatischen Bühnenpräsenz ist er ein wichtiger Faktor für die besondere Atmosphäre bei den Live-Konzerten.",
     photo: MillaImg,
   },
   {
@@ -108,8 +95,6 @@ export const persons: Array<Person> = [
     position: { top: "700px", left: "750px" },
     width: "100px",
     height: "800px",
-    description:
-      "Rolf war von Mitte 1986 bis 1989 und von 2007–2012 der Drummer bei GROBSCHNITT. Er ist ebenfalls Drummer bei der bekannten Hagener Topband EXTRABREIT. Aber auch mit GREEN und dem Großprojekt SYMPHONIC FLOYD war er erfolgreich. Jeder, der ihn einmal live erleben durfte, ist von seinem powervollen, dynamischen Spiel begeistert.",
     photo: RolfImg,
   },
   {
@@ -121,8 +106,6 @@ export const persons: Array<Person> = [
     position: { top: "800px", left: "850px" },
     width: "100px",
     height: "800px",
-    description:
-      "Deva spielte von 2007–2012 die Keyboards bei GROBSCHNITT. Er spielte viele Jahre bei MARRAKESH EXPRESS und ist auch bei GREEN und bei SYMPHONIC FLOYD an den Keyboards. Er ist Spezialist für wunderschöne Klangteppiche, gefühlvolle Soli und aufregende Sounds.",
     photo: TattvaImg,
   },
 ];

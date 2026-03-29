@@ -8,6 +8,7 @@ import ÜnpV3Img from "../../assets/übernextparty_v3.svg";
 import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/x_00828779.jpg";
 import React from "react";
 import { concerts } from "../Concerts/concertData";
+import { getUpcomingConcerts } from "../Concerts/concertDates";
 import { Link } from "react-router-dom";
 import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
@@ -64,8 +65,9 @@ export const Home = () => {
   const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
-  const nextConcert = concerts[2];
-  const übernextConcert = concerts[3];
+  const upcoming = getUpcomingConcerts(concerts);
+  const nextConcert = upcoming[0];
+  const übernextConcert = upcoming[1];
 
   React.useEffect(() => {
     let loadedCount = 0;
@@ -105,13 +107,14 @@ export const Home = () => {
         </div>
 
         <div className={styles.bigTextWrapper}>
-          <Typewriter text={t({ id: "home.typewriter.premiere" })} />
+          <Typewriter text={t({ id: "home.intro" })} />
+          {/* <Typewriter text={t({ id: "home.typewriter.premiere" })} />
           <h3>
             <FormattedMessage
               id="home.intro"
               values={{ grobschnitt: <Em>Grobschnitt</Em> }}
             />
-          </h3>
+          </h3> */}
         </div>
       </div>
 
@@ -206,25 +209,29 @@ export const Home = () => {
           </p>
         </div>
 
-        <DividerRule />
+        {nextConcert && (
+          <>
+            <DividerRule />
 
-        <div className={styles.textWrapper}>
-          <Typewriter text={t({ id: "home.typewriter.shows" })} />
-          <div className={styles.upcomingShows}>
-            <UpcomingShow concert={nextConcert} />
-            <UpcomingShow concert={übernextConcert} />
-          </div>
-          <span>
-            <FormattedMessage
-              id="home.upcomingText"
-              values={{
-                link: (
-                  <Link to="termine">{t({ id: "home.upcomingLink" })}</Link>
-                ),
-              }}
-            />
-          </span>
-        </div>
+            <div className={styles.textWrapper}>
+              <Typewriter text={t({ id: "home.typewriter.shows" })} />
+              <div className={styles.upcomingShows}>
+                <UpcomingShow concert={nextConcert} />
+                {übernextConcert && <UpcomingShow concert={übernextConcert} />}
+              </div>
+              <span>
+                <FormattedMessage
+                  id="home.upcomingText"
+                  values={{
+                    link: (
+                      <Link to="termine">{t({ id: "home.upcomingLink" })}</Link>
+                    ),
+                  }}
+                />
+              </span>
+            </div>
+          </>
+        )}
       </Card>
     </div>
   );

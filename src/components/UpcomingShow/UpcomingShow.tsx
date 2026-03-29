@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./UpcomingShow.module.less";
 import { type Concert } from "../../pages/Concerts/concertData";
+import { isConcertInPast } from "../../pages/Concerts/concertDates";
 import { LinkButton } from "../Button/Button";
 import { useTranslation } from "../../i18n/useTranslation";
 
@@ -23,7 +24,7 @@ export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
         <span className={styles.tickets}>
           {soldOut ? (
             <span className={styles.soldOut}>{t({ id: "upcomingShow.soldOut" })}</span>
-          ) : tickets ? (
+          ) : tickets && !isConcertInPast(concert) ? (
             <LinkButton
               small
               href={tickets}

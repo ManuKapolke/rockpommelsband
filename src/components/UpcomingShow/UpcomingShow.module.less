@@ -7,6 +7,11 @@
   padding: 8px 16px;
   background-color: hsla(230deg 90% 95% / 16%);
   border-radius: 4px;
+
+  &.cancelledShow {
+    background-color: hsla(337, 71%, 41%, 0.2);
+    color: hsla(224, 10%, 80%, 0.8);
+  }
 }
 
 .details {
@@ -25,6 +30,13 @@
 
 .soldOut {
   color: var(--font-color-hover);
+  border: 2px solid;
+  border-radius: 4px;
+  padding: 2px 4px;
+  transform: rotate(-6deg);
+}
+
+.cancelled {
   border: 2px solid;
   border-radius: 4px;
   padding: 2px 4px;

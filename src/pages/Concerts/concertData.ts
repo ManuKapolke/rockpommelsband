@@ -5,6 +5,7 @@ export type Concert = {
   event?: string;
   tickets?: string;
   soldOut?: boolean;
+  cancelled?: boolean;
 };
 
 export const concerts: Array<Concert> = [
@@ -50,6 +51,7 @@ export const concerts: Array<Concert> = [
     location: "Stadthalle",
     tickets:
       "https://www.eventim.de/event/rockpommels-band-live-2026-stadthalle-meschede-20857565/",
+    cancelled: true,
   },
   {
     date: "23.05.2026",

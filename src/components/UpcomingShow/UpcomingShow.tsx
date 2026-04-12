@@ -11,10 +11,12 @@ export type UpcomingShowProps = {
 
 export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
   const { t } = useTranslation();
-  const { date, city, location, event, tickets, soldOut } = concert;
+  const { date, city, location, event, tickets, soldOut, cancelled } = concert;
 
   return (
-    <div className={styles.upcomingShow}>
+    <div
+      className={`${styles.upcomingShow} ${cancelled ? styles.cancelledShow : ""}`}
+    >
       <span>{date}</span>
       <span className={styles.details}>
         <span>
@@ -23,7 +25,13 @@ export const UpcomingShow: React.FC<UpcomingShowProps> = ({ concert }) => {
         </span>
         <span className={styles.tickets}>
           {soldOut ? (
-            <span className={styles.soldOut}>{t({ id: "upcomingShow.soldOut" })}</span>
+            <span className={styles.soldOut}>
+              {t({ id: "upcomingShow.soldOut" })}
+            </span>
+          ) : cancelled ? (
+            <span className={styles.cancelled}>
+              {t({ id: "upcomingShow.cancelled" })}
+            </span>
           ) : tickets && !isConcertInPast(concert) ? (
             <LinkButton
               small

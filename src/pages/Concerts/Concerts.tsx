@@ -4,6 +4,11 @@ import { Card } from "../../components/Card/Card";
 import { Typewriter } from "../../components/Typewriter/Typewriter";
 import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
 import { concerts } from "./concertData";
+import {
+  getPastConcertsByYear,
+  getUpcomingConcertsByYear,
+  type ConcertsByYear,
+} from "./concertDates";
 import styles from "./Concerts.module.less";
 import { zoomInVariants } from "../Home/Home";
 import { useTranslation } from "../../i18n/useTranslation";
@@ -12,9 +17,26 @@ import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/x_0082
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 
+const renderYearSections = (sections: ConcertsByYear) =>
+  sections.map(({ year, concerts: yearConcerts }) => (
+    <React.Fragment key={year}>
+      <h3 className={styles.yearHeading}>{year}</h3>
+      <div className={styles.upcomingShows}>
+        {yearConcerts.map((concert) => (
+          <UpcomingShow
+            key={`${concert.date}-${concert.city}`}
+            concert={concert}
+          />
+        ))}
+      </div>
+    </React.Fragment>
+  ));
+
 export const Concerts = () => {
   const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = React.useState(false);
+  const upcomingByYear = getUpcomingConcertsByYear(concerts);
+  const pastByYear = getPastConcertsByYear(concerts);
 
   return (
     <div className={styles.contentWrapper}>
@@ -45,23 +67,14 @@ export const Concerts = () => {
 
         {imgLoaded ? (
           <>
-            <Typewriter text={t({ id: "concerts.year2026" })} />
-            <div className={styles.upcomingShows}>
-              {concerts
-                .filter((concert) => concert.date.endsWith("2026"))
-                .map((concert) => (
-                  <UpcomingShow key={concert.date} concert={concert} />
-                ))}
-            </div>
+            {upcomingByYear.length > 0 && renderYearSections(upcomingByYear)}
 
-            <Typewriter text={t({ id: "concerts.year2025" })} />
-            <div className={styles.upcomingShows}>
-              {concerts
-                .filter((concert) => concert.date.endsWith("2025"))
-                .map((concert) => (
-                  <UpcomingShow key={concert.date} concert={concert} />
-                ))}
-            </div>
+            {pastByYear.length > 0 && (
+              <section className={`${styles.section} ${styles.historySection}`}>
+                <Typewriter text={t({ id: "concerts.history" })} />
+                {renderYearSections(pastByYear)}
+              </section>
+            )}
           </>
         ) : (
           <LoadingSpinner />

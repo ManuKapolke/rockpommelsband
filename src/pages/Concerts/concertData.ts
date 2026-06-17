@@ -45,14 +45,14 @@ export const concerts: Array<Concert> = [
     location: "Neuberinhaus",
     tickets: "https://prog-rock.club",
   },
-  {
-    date: "16.05.2026",
-    city: "MESCHEDE",
-    location: "Stadthalle",
-    tickets:
-      "https://www.eventim.de/event/rockpommels-band-live-2026-stadthalle-meschede-20857565/",
-    cancelled: true,
-  },
+  // {
+  //   date: "16.05.2026",
+  //   city: "MESCHEDE",
+  //   location: "Stadthalle",
+  //   tickets:
+  //     "https://www.eventim.de/event/rockpommels-band-live-2026-stadthalle-meschede-20857565/",
+  //   cancelled: true,
+  // },
   {
     date: "23.05.2026",
     city: "ZOETERMEER (NL)",
@@ -78,5 +78,12 @@ export const concerts: Array<Concert> = [
     location: "Colos-Saal",
     tickets:
       "https://colos-saal.de/komplettes-programm/programm-nach-genres/classicrock-hardrock/rockpommels-band.html",
+  },
+  {
+    date: "27.02.2027",
+    city: "OBERHAUSEN",
+    location: "Zentrum Altenberg",
+    tickets:
+      "https://www.reservix.de/tickets-rockpommels-band-live-in-oberhausen-2027-in-oberhausen-zentrum-altenberg-oberhausen-am-27-2-2027/e2576984",
   },
 ];

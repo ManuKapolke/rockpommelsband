@@ -203,9 +203,21 @@ export const Home = () => {
           </p>
 
           <p>
-            <b>
-              <FormattedMessage id="home.paragraph3" />
-            </b>
+            <FormattedMessage
+              id="home.paragraph3"
+              values={{
+                grobschnitt: <Em>Grobschnitt</Em>,
+              }}
+            />
+          </p>
+
+          <p>
+            <FormattedMessage
+              id="home.paragraph4"
+              values={{
+                rockpommelsBand: <Em>Rockpommel's Band</Em>,
+              }}
+            />
           </p>
         </div>
 

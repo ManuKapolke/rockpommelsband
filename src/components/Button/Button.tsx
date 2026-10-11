@@ -1,3 +1,4 @@
+import { Link, LinkProps } from "react-router-dom";
 import styles from "./Button.module.less";
 import React from "react";
 
@@ -34,6 +35,21 @@ export const LinkButton = ({
   return (
     <a
       className={`${styles.button} ${small ? styles.small : ""} ${className}`}
+      {...props}
+    />
+  );
+};
+
+export const InternalLinkButton = ({
+  small = false,
+  className = "",
+  to,
+  ...props
+}: LinkProps & { small?: boolean; className?: string }) => {
+  return (
+    <Link
+      className={`${styles.button} ${small ? styles.small : ""} ${className}`}
+      to={to}
       {...props}
     />
   );

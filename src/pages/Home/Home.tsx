@@ -1,21 +1,22 @@
 import { Card } from "../../components/Card/Card";
 import styles from "./Home.module.less";
-import { DividerRule } from "../../components/DividerRule/DividerRule";
+// import { DividerRule } from "../../components/DividerRule/DividerRule";
 import { Typewriter } from "../../components/Typewriter/Typewriter";
 import { motion } from "motion/react";
 import RPBWriting from "../../assets/rockpommelsband.svg";
 import ÜnpV3Img from "../../assets/übernextparty_v3.svg";
 import LiveImg from "../../assets/img/gallery/2025-10-03_Hagen/Rudi_Brand/x_00828779.jpg";
 import React from "react";
-import { concerts } from "../Concerts/concertData";
-import { getUpcomingConcerts } from "../Concerts/concertDates";
-import { Link } from "react-router-dom";
-import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
+// import { concerts } from "../Concerts/concertData";
+// import { getUpcomingConcerts } from "../Concerts/concertDates";
+// import { Link } from "react-router-dom";
+// import { UpcomingShow } from "../../components/UpcomingShow/UpcomingShow";
 import { getOptimizedImageUrl, getSrcSet } from "../Gallery/galleryData";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { FormattedMessage } from "react-intl";
 import { useTranslation } from "../../i18n/useTranslation";
 import { Em } from "../../components/Em/Em";
+import { InternalLinkButton } from "../../components/Button/Button";
 
 export const fadeInVariants = {
   hidden: { opacity: 0 },
@@ -65,9 +66,9 @@ export const Home = () => {
   const { t } = useTranslation();
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
-  const upcoming = getUpcomingConcerts(concerts);
-  const nextConcert = upcoming[0];
-  const übernextConcert = upcoming[1];
+  // const upcoming = getUpcomingConcerts(concerts);
+  // const nextConcert = upcoming[0];
+  // const übernextConcert = upcoming[1];
 
   React.useEffect(() => {
     let loadedCount = 0;
@@ -221,7 +222,11 @@ export const Home = () => {
           </p>
         </div>
 
-        {nextConcert && (
+        <InternalLinkButton to="termine" className={styles.largeButton}>
+          {t({ id: "home.datesAndTickets" })}
+        </InternalLinkButton>
+
+        {/* {nextConcert && (
           <>
             <DividerRule />
 
@@ -243,7 +248,7 @@ export const Home = () => {
               </span>
             </div>
           </>
-        )}
+        )} */}
       </Card>
     </div>
   );

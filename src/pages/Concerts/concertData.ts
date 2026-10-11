@@ -14,14 +14,12 @@ export const concerts: Array<Concert> = [
     city: "HAGEN",
     location: "Werkhof Kulturzentrum",
     tickets: "https://werkhof-kulturzentrum.de/rockpommels-band",
-    soldOut: true,
   },
   {
     date: "04.10.2025",
     city: "HAGEN",
     location: "Werkhof Kulturzentrum",
     tickets: "https://werkhof-kulturzentrum.de/rockpommels-band-2",
-    soldOut: true,
   },
   {
     date: "06.03.2026",
@@ -85,5 +83,18 @@ export const concerts: Array<Concert> = [
     location: "Zentrum Altenberg",
     tickets:
       "https://www.reservix.de/tickets-rockpommels-band-live-in-oberhausen-2027-in-oberhausen-zentrum-altenberg-oberhausen-am-27-2-2027/e2576984",
+  },
+  {
+    date: "12.06.2027",
+    city: "SOEST",
+    location: "Stadthalle",
+    tickets:
+      "https://www.so-ist-soest.de/de/ticketshop/produkte/dfx-53087.php",
+  },
+  {
+    date: "13.08.2027",
+    city: "BALVER HÖHLE",
+    location: "German Kultrock Festival (Exklusivkonzert)",
+    tickets: "https://german-kultrock.de/",
   },
 ];

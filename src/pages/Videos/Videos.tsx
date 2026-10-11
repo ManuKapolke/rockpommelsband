@@ -32,19 +32,39 @@ export const Videos = () => {
         {imgLoaded ? (
           <div className={styles.videoWrapper}>
             <YouTubeEmbed
+              videoId="AXyr2Pp64l4"
+              params="si=YBIX7hw0WF_uMB13"
+              title="RPL Finale Hagen"
+            />
+            <YouTubeEmbed
+              videoId="_ZVNwT4UVAo"
+              params="si=Kyv7c0bJ5kB9hRpP"
+              title="Sonnentanz Herzberg"
+            />
+            <YouTubeEmbed
+              videoId="rkcoAFaM_rs"
+              params="si=vGNWGsQbYPTNLCO3"
+              title="Powerplay Paderborn"
+            />
+            <YouTubeEmbed
+              videoId="o8YvqKZz7rs"
+              params="si=PVRxqavKcrmY7erH"
+              title="Könige der Welt Paderborn"
+            />
+            <YouTubeEmbed
               videoId="p843F6wLxSw"
               params="si=dro8L83dzNANPgUc"
-              title="Before"
+              title="Before Werkhof"
             />
             <YouTubeEmbed
               videoId="Ajr4r2Wbhwc"
               params="si=mlyRJtQQ5ldo1cb0"
-              title="Ernies Reise"
+              title="Ernies Reise Werkhof"
             />
             <YouTubeEmbed
               videoId="dK1AuAbJYbY"
               params="si=jmOUWr3t4rIvERVU"
-              title="Könige der Welt"
+              title="Könige der Welt Werkhof"
             />
           </div>
         ) : (

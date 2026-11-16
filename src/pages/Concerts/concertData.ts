@@ -85,6 +85,13 @@ export const concerts: Array<Concert> = [
       "https://www.reservix.de/tickets-rockpommels-band-live-in-oberhausen-2027-in-oberhausen-zentrum-altenberg-oberhausen-am-27-2-2027/e2576984",
   },
   {
+    date: "15.05.2027",
+    city: "WIPPERFÜRTH",
+    location: "Alte Drahtzieherei",
+    tickets:
+      "https://altedrahtzieherei.de/event/rockpommel-s-band#ticketshop",
+  },
+  {
     date: "12.06.2027",
     city: "SOEST",
     location: "Stadthalle",
